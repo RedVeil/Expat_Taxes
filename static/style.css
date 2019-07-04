@@ -1,0 +1,305 @@
+
+/****** General Styles *********/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html { 
+  font-family: sans-serif; 
+  background: #eee;
+}
+
+body {
+  background: rgb(41, 41, 41);
+}
+
+h1 {
+  margin: 2rem auto 0.5rem auto;
+  font-family: sans-serif; 
+  color: white;
+  font-size: 2em;
+}
+
+h2 {
+  padding:1em;
+  font-family: sans-serif; 
+  color: white;
+}
+
+h4{
+  color:white;
+  margin: 0 0 0.5em 0;
+}
+
+p {
+  font-family: sans-serif; 
+  color: white;
+  font-size: 1.2em;
+  margin: 0 auto 1em auto;
+}
+
+label{
+  font-size: 0.8rem;
+  color:white;
+}
+
+::placeholder{
+  color: white;
+  font-size: 0.8rem;
+}
+
+/****** Navigation Style *********/
+.navigation {
+  background-color: #1F3340;
+  width: 100%;
+}
+
+.navigation ul {
+  margin: -1.5em;
+  padding: 0;
+  text-align: center;
+}
+
+.navigation li {
+  display: inline-block;
+  color: #FFF;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  margin: 1em;
+}
+
+.link{
+  color:white;
+}
+
+/****** Body Style *********/
+/*   Grid   */
+.grid {
+  margin: 10em auto 12em auto;
+  width: 60em;
+  height: 30em;
+  display:grid;
+  grid-template: 1fr / 1fr 2fr;
+  box-shadow: 10px 10px 5px black;
+  overflow: hidden;
+}
+
+.textSide{
+  width:100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(124, 124, 124);
+}
+
+.gridSave{
+  margin: 2em auto 12em auto;
+  width: 60em;
+  display:grid;
+  box-shadow: 10px 10px 5px black;
+  background-color: #1F3340;
+  overflow: hidden;
+}
+
+.centerForm{
+  display:grid;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  width: 60em;
+}
+
+.center{
+  width: 22em;
+  display:flex;
+  justify-content: space-evenly;
+  margin: 1em 0;
+  padding: 0 0;
+}
+
+.spacer{
+  margin: 1em 0;
+  padding: 1em;
+  /*border: none;
+  border-bottom: 1px solid white;*/
+}
+
+/*   Form Side Grid   */
+.formSide{
+  width: 100%;
+  background-color: #1F3340;
+  margin: 0 auto;
+  padding: 0 ;
+  display: grid;
+  grid-template: 1fr 60% 1fr/ 1fr;
+  grid-gap: 1em;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+.title{
+  width: 100%;
+  height:100%;
+  grid-area: 1 / 1 /span 1 /span 1;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.form {
+  width:100%;
+  height:100%;
+  grid-area: 2 / 1 /span 1 /span 1;
+  display: grid;
+  align-items: center;
+  justify-items: stretch;
+  text-align: center;
+}
+
+
+.button{
+  width:100%;
+  height:100%;
+  grid-area: 3 / 1 /span 1 /span 1;
+  display: grid;
+  justify-content: center;
+  align-content: top;
+}
+
+.centerButton{
+  display: inline;
+}
+
+.yesNo{
+  margin: 2em auto;
+}
+
+
+
+/* Special Cases */
+
+fieldset{
+  border:none;
+  margin-top: 1em;
+  padding: 1em;
+  border-top: 4px double white;
+
+}
+
+legend{
+  color:white;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0 1em 0 1em;
+}
+
+#testbox{
+  display:block;
+}
+
+
+
+.yNQuestion{
+  display: grid;
+  margin: 7em auto;
+  justify-items: center;
+  align-items: center;
+}
+
+#yesNoBtn{
+  border: none;
+  background-color: #4D1212;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 1em;
+  transition-duration: 0.4s;
+  margin: 0.5rem auto 1rem auto;
+  /*box-shadow: 1px 1px 2px #182833;*/
+}
+
+#yesNoBtn:hover{
+  background-color: #992323;
+}
+
+/*   Input   */
+input[type=text]{
+  margin: 1em;
+  padding: 0.5em 0;
+  color: white;
+  background-color: #1F3340;
+  border: none;
+  border-bottom: 1px solid white;
+  text-align:center;
+}
+
+input:focus{
+  outline: none;
+}
+
+/*   Buttons   */
+#submit{
+  border: none;
+  background-color: #4D1212;/*#993333*/
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
+  transition-duration: 0.4s;
+  margin: 0.5rem auto 1rem auto;
+  /*box-shadow: 1px 1px 1px black;*/
+}
+
+#submit:hover{
+  background-color: #992323;
+}
+
+#back{
+  border: none;
+  background-color: #4D1212;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
+  transition-duration: 0.4s;
+  margin: 0.5rem auto 1rem auto;
+  /*box-shadow: 1px 1px 1px black;*/
+}
+
+#back:hover{
+  background-color: #992323;
+}
+
+
+/*   Input-Fields   */
+
+.shortNum{
+  width: 2.5em;
+}
+
+.mediumNum{
+  width: 4em;
+}
+
+.largeNum{
+  width: 6em;
+}
+
+
+/****** Footer Style *********/
+footer {
+  margin-top: 2em;
+  background-color: rgb(41, 41, 41);
+  color:white;
+  text-align: center;
+  height: 100px;
+}
+
+
+
+
+/*****Experiment Corner*****/
