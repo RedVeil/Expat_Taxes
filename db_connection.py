@@ -13,29 +13,37 @@ def write_to_db(key,value):
 
 #experimental form set up (currently not in use)
 def set_up():
-    input_keys = []
-    titles = []
-    tooltips = []
+    total_inputs = []
     db_connection = sqlite3.connect('tax.db')
     db_cursor = db_connection.cursor()
-    db_cursor.execute(f"SELECT Input FROM input_fields") 
-    input_keys_temp = db_cursor.fetchall()
-    for i in input_keys_temp:
-        input_keys.append(i[0])
-    db_cursor.execute(f"SELECT Title FROM input_fields")
-    titles_temp = db_cursor.fetchall()
-    for i in titles_temp:
+    db_cursor.execute(f"SELECT * FROM input_fields") 
+    db_inputs = db_cursor.fetchall()
+    db_cursor.execute(f"SELECT * FROM form_pages") 
+    form_pages = db_cursor.fetchall()
+    for page in form_pages:
+        form_page = {"title": page[1], "header":page[2], "inputFields":[]}
+        total_inputs.append(form_page)
+    for i in db_inputs:
+        if i[4] != None:
+            if i[9] == 1:
+                if i[8] != None:
+                    if i[6] != None:
+                        input_field = {"name":i[1],"placeholder":i[7],"tooltip":i[5],"defaultValue":i[6], "type":i[8], "index":i[10], "autoFocus":1, "size":i[11], "margin":i[12]}
+                    else:
+                        input_field = {"name":i[1],"placeholder":i[7],"tooltip":i[5],"defaultValue":i[6], "type":i[8], "index":i[10],"autoFocus":1, "size":i[11], "margin":i[12]}
 
-        titles.append(i[0])
-    db_cursor.execute(f"SELECT Tooltip FROM input_fields")
-    tooltips_temp = db_cursor.fetchall()
-    for i in tooltips_temp:
-        tooltips.append(i[0])
-    db_cursor.close()
-    form = {}
-    for counter in range(len(input_keys)):
-        form[input_keys[counter]] = [titles[counter],tooltips[counter]]
-    json_form = json.dumps(form, ensure_ascii=False)
+                else:
+                    input_field = {"name":i[1],"placeholder":i[7],"tooltip":i[5],"defaultValue":i[6], "index":i[10],"autoFocus":1, "size":i[11], "margin":i[12]}
+            if i[8] != None:
+                if i[6] != None:
+                    input_field = {"name":i[1],"placeholder":i[7],"tooltip":i[5],"defaultValue":i[6], "type":i[8], "index":i[10],"autoFocus":1, "size":i[11], "margin":i[12]}
+                else:
+                    input_field = {"name":i[1],"placeholder":i[7],"tooltip":i[5],"defaultValue":i[6], "type":i[8], "index":i[10], "size":i[11], "margin":i[12]}
+            else:
+                input_field = {"name":i[1],"placeholder":i[7],"tooltip":i[5],"defaultValue":i[6], "index":i[10], "size":i[11], "margin":i[12]}
+            #print(total_inputs[i[4]]["inputFields"])
+            total_inputs[i[4]]["inputFields"].append(input_field)
+    return total_inputs
     
 def load_from_db(input_key):
     db_connection = sqlite3.connect('tax.db')
@@ -54,7 +62,7 @@ def load_from_db(input_key):
     return x_location, y_location, ID
 
 
-def safe_data_and_retrieve_location(json_object):
+def retrieve_location(json_object):
     print("retrieve data from db")
     page1 = {}
     page2 = {}
@@ -63,22 +71,24 @@ def safe_data_and_retrieve_location(json_object):
     page5 = {}
     page6 = {}
     page7 = {}
-    for key in json_object:
+    for key in json_object.keys():
+        print(key, json_object[key])
         temp_locations = load_from_db(key)
-        location = [temp_locations[0][0],temp_locations[1][0]]
-        ID = temp_locations[2][0]
-        if ID < 101:
-            page1[json_object[key]] =  location
-        elif ID < 201:
-            page2[json_object[key]] =  location
-        elif ID < 301:
-            page3[json_object[key]] =  location
-        elif ID < 401:
-            page4[json_object[key]] =  location
-        elif ID < 501:
-            page5[json_object[key]] =  location
-        elif ID < 601:
-            page6[json_object[key]] =  location
-        elif ID >= 601:
-            page7[json_object[key]] =  location
+        if temp_locations[0] != None or temp_locations[1] != None:
+            location = f"{temp_locations[0][0]},{temp_locations[1][0]}"
+            ID = temp_locations[2][0]
+            if ID < 101:  # CHANGE ID to respective form_page!!!
+                page1[location] = json_object[key]
+            elif ID < 201:
+                page2[location] = json_object[key]
+            elif ID < 301:
+                page3[location] = json_object[key]
+            elif ID < 401:
+                page4[location] = json_object[key]
+            elif ID < 501:
+                page5[location] = json_object[key]
+            elif ID < 601:
+                page6[location] = json_object[key]
+            elif ID >= 601:
+                page7[location] = json_object[key]
     return page1,page2,page3,page4,page5,page6,page7
