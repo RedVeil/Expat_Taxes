@@ -1,7 +1,4 @@
 import React from 'react';
-import './Form.css';
-
-
 
 export class Form extends React.Component {
   render() {
@@ -54,7 +51,7 @@ export class Form extends React.Component {
         <label htmlFor={this.props.inputField.index}>{this.props.inputField.placeholder}</label><br />
       </>
     }
-    if (this.props.inputField.type === undefined) {
+    if (this.props.inputField.type === null) {
       if (this.props.label === 1) {
         inputField = <>
           <label htmlFor={this.props.inputField.name} style={{ display: "inline", width: `6em`, margin: `0.5em` }}>{this.props.inputField.placeholder}</label>

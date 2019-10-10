@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import { Landing } from "../Landing/Landing";
 import { Saved } from "../Saved/Saved";
-import { ProgressBar } from "../ProgressBar/ProgressBar";
+import { gdprPopUp } from "../utilities/GdprPopUp";
+import { createForms } from "../utilities/createForms";
+import { printDocument } from "../utilities/printDocument";
 
 const baseURL = "http://localhost/form";
 
@@ -17,7 +19,6 @@ export class App extends React.Component {
       userInput: {},
       index: 0,
     };
-    this.createForms = this.createForms.bind(this);
     this.onChangeSaveValue = this.onChangeSaveValue.bind(this);
     this.saveValue = this.saveValue.bind(this);
     this.saveFormValue = this.saveFormValue.bind(this);
@@ -26,31 +27,11 @@ export class App extends React.Component {
     this.openFormPage = this.openFormPage.bind(this);
     this.nextForm = this.nextForm.bind(this);
     this.previousForm = this.previousForm.bind(this);
-    this.createUserInput = this.createUserInput.bind(this);
     this.changeIndex = this.changeIndex.bind(this);
-    this.legalPopUp = this.legalPopUp.bind(this);
   };
 
   componentDidMount() {
-    this.createForms();
-  };
-
-  createForms() {
-    fetch(baseURL, { headers: { credentials: "includes" } })
-      .then(response => { if (response.ok) { return response.json() } })
-      .then(response => { this.setState({ forms: response }) });
-  };
-
-  createUserInput(response) {
-    let userInputDict = {}
-    for (let i = 0, len = response.length; i < len; i++) {
-      for (let n = 0, len = response[i].inputFields.length; n < len; n++) {
-        /*console.log(response[i].inputFields[n].name)*/
-        userInputDict[response[i].inputFields[n].name] = ""
-      }
-    }
-    this.setState({ userInput: userInputDict })
-    console.log(userInputDict)
+    this.setState({ forms: createForms() })
   };
 
   onChangeSaveValue(event) {
@@ -78,7 +59,7 @@ export class App extends React.Component {
   }
 
   sendAll() {
-    const body = JSON.stringify(this.state.userInput)
+    printDocument(this.state.userInput)
   };
 
   openSavedPage() {
@@ -296,15 +277,6 @@ export class App extends React.Component {
       ({ formID: this.state.formID - 1 }))
   };
 
-  legalPopUp() {
-    alert(`
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.`)
-  };
-
   render() {
     return (
       <div className="App">
@@ -334,9 +306,26 @@ export class App extends React.Component {
           <p style={{ color: "white", marginTop: "1em" }}>Thanks a lot for visiting my Website! If you have any questions regarding the site or with your "Anmeldung" feel free to ask me directly.</p>
           <p style={{ color: "white" }}>I hope it helped you and i would love to hear feedback from you! :)</p>
           <p style={{ color: "white" }}>Consider leaving a tip it helps me to continue my work. <a href="https://paypal.me/pools/c/8htPxuQfTR">Paypal</a></p>
-          <p style={{ color: "white" }}>And if you really want to see it here you go: <a onClick={this.legalPopUp} href="#">Legal</a>.</p>
+          <p style={{ color: "white" }}>And if you really want to see it here you go: <span>{gdprPopUp}</span></p>
         </div>
       </div>
     )
   };
 };
+
+
+/*
+Dont think i need this:
+createUserInput(response) {
+    let userInputDict = {}
+    for (let i = 0, len = response.length; i < len; i++) {
+      for (let n = 0, len = response[i].inputFields.length; n < len; n++) {
+        /*console.log(response[i].inputFields[n].name)
+        userInputDict[response[i].inputFields[n].name] = ""
+      }
+    }
+    this.setState({ userInput: userInputDict })
+    console.log(userInputDict)
+  };
+
+  */

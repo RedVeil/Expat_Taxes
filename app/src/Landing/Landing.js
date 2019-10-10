@@ -1,7 +1,5 @@
 import React from 'react';
-import './Landing.css';
 import { FormPage } from "../FormPage/FormPage";
-//import {Save} from "../Save/Save";
 
 export class Landing extends React.Component {
   render() {
