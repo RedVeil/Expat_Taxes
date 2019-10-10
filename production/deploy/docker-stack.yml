@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+
+  web:
+    image: docker.intern:5000/${APP_NAME}_web
+    networks:
+      - frontend
+    ports:
+      - ${PUBLIC_PORT_WEB}:80
+    deploy:
+      replicas: 1
+    restart: always
+
+networks:
+  frontend:
+    driver_opts:
+      encrypted: ""

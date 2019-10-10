@@ -1,0 +1,29 @@
+variables:
+  RELEASE_ID_PFX: $CI_PROJECT_NAME-build
+  RELEASE_ID: $CI_PROJECT_NAME-build$CI_PIPELINE_ID
+  APP_ID: $CI_PROJECT_NAME
+
+stages:
+  - build
+  - deploy production
+
+job_build_application:
+  stage: build
+  only:
+    - master
+  before_script:
+    # clean up to avoid flooded CI server
+    - docker system prune -f
+  script:
+    - PWD_ORIGINAL=$PWD
+    - cd production/build && ./run.sh && cd $PWD_ORIGINAL
+    - chmod u+x ./production/deploy/build.sh && ./production/deploy/build.sh
+  tags:
+    - docker
+
+job_deploy_production:
+  stage: deploy production
+  script:
+    - chmod u+x ./production/deploy/deploy.sh && ./production/deploy/deploy.sh
+  tags:
+    - docker
