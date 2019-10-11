@@ -104,5 +104,5 @@ export function printDocument(inputs){
   for (var i=1; i<8;i++){
     pdf = generatePage(pdf, pageArray[i], inputPages[i], i+1)
   };
-  pdf.save("test.pdf");
+  pdf.save("Steuerliche Anmeldung.pdf");
 };

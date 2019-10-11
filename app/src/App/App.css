@@ -119,6 +119,21 @@ label{
   height: 100%;
 }
 
+#gdprButton{
+  border: none;
+  background-color: transparent;/*#993333*/
+  text-decoration: none;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+#gdprButton:hover{
+  color: #FF4E50;
+}
+
+#gdprButton:focus{
+  outline: none;
+}
 
 /***** Link Styling ******/
 #sendAll{
@@ -127,10 +142,7 @@ label{
   text-decoration: none;
   color: white;
   padding: 0.5rem 0.75rem;
-  /*border-radius: 50%;*/
   transition-duration: 0.4s;
-  /*margin: -0.2rem 1rem 1rem auto;
-  box-shadow: 1px 1px 1px black;*/
 }
 
 #sendAll:hover{
@@ -147,8 +159,6 @@ label{
   color: white;
   padding: 0.5rem 0.75rem;
   transition-duration: 0.4s;
-  /*margin: -0.2rem 1rem 1rem auto;
-  box-shadow: 1px 1px 1px black;*/
 }
 
 #formBtn{

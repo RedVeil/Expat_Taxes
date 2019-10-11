@@ -2,11 +2,10 @@ import React from 'react';
 import './App.css';
 import { Landing } from "../Landing/Landing";
 import { Saved } from "../Saved/Saved";
-import { gdprPopUp } from "../utilities/GdprPopUp";
+import { showHideGdpr } from "../utilities/GdprPopUp";
 import { createForms } from "../utilities/createForms";
 import { printDocument } from "../utilities/printDocument";
-
-const baseURL = "http://localhost/form";
+import { gdprText } from "../databases/gdpr";
 
 export class App extends React.Component {
   constructor(props) {
@@ -306,7 +305,8 @@ export class App extends React.Component {
           <p style={{ color: "white", marginTop: "1em" }}>Thanks a lot for visiting my Website! If you have any questions regarding the site or with your "Anmeldung" feel free to ask me directly.</p>
           <p style={{ color: "white" }}>I hope it helped you and i would love to hear feedback from you! :)</p>
           <p style={{ color: "white" }}>Consider leaving a tip it helps me to continue my work. <a href="https://paypal.me/pools/c/8htPxuQfTR">Paypal</a></p>
-          <p style={{ color: "white" }}>And if you really want to see it here you go: <span>{gdprPopUp}</span></p>
+          <p style={{ color: "white" }}>And if you really want to see it here you go: <button onClick={showHideGdpr} id="gdprButton">GDPR & Impressum</button></p>
+          <div id="gdpr" style={{display:"none"}}>{gdprText}</div>
         </div>
       </div>
     )
