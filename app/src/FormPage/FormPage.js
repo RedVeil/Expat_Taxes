@@ -27,7 +27,7 @@ export class FormPage extends React.Component {
         <div className="grid">
           <div className="textSide">
             <div className="textContainer">
-              {tooltip}
+              <p>{tooltip}</p>
             </div>
           </div>
           <div className="formSide">

@@ -1,9 +1,9 @@
 export const formPages = [
 {"title": "Personal Informations", "header": "Who are you?","inputFields":[], },
 {"title": "Personal Informations", "header": "Where do you currently live?","inputFields":[], },
-{"title": "Personal Informations", "header": "And your phone number?","inputFields":[], },
+{"title": "Personal Informations", "header": "What is your phone number?","inputFields":[], },
 {"title": "Personal Informations", "header": "Email and Website","inputFields":[], },
-{"title": "Personal Informations", "header": "Whats your current (main) Job?","inputFields":[], },
+{"title": "Personal Informations", "header": "What is your current (main) Job?","inputFields":[], },
 {"title": "Personal Informations", "header": "Do you have to pay church tax?","inputFields":[], },
 {"title": "Your Finanzamt", "header": "Enter the name of your tax office here","inputFields":[], },
 {"title": "Personal Informations", "header": "Whats your german ID (\"Identifikationsnummer\")","inputFields":[], },
