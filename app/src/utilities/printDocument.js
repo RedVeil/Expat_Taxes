@@ -99,6 +99,12 @@ export function printDocument(inputs){
   });
 
   const inputPages = [inputsPageOne,inputsPageTwo,inputsPageThree,inputsPageFour,inputsPageFive,inputsPageSix,inputsPageSeven,inputsPageEight];
+  const sepa = inputsPageSeven.find(function(entry){
+    return entry.name === "SEPA"}
+  );
+  //SEPA bla
+  // Doc recipient?
+  if(sepa)
   inputPages.map(addXYCoordinates);
   var pdf = createFirstPage(inputPages[0])
   for (var i=1; i<8;i++){
