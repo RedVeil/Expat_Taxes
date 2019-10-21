@@ -79,6 +79,17 @@ input[type=text]{
     text-align:center;
     width: 10em;
 }
+
+input[type=text]:focus{
+    padding: 0.5em 0;
+    color: red;
+    background-color: grey;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align:center;
+    width: 10em;
+}
+
 input[type=radio]{
     -webkit-appearance: none;
     width: 0.9em;

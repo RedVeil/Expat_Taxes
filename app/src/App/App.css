@@ -1,45 +1,8 @@
 /****** General Styles *********/
-body {
-  background-image: linear-gradient(to right, #205A7B, #80DCD9);
-}
-
-h1 {
-  /*margin: 2rem auto 0.5rem auto;*/
-  font-family: sans-serif; 
-  color: black;
-  font-size: 2em;
-}
-
-h2 {
-  margin-top: 2em;
-  font-family: sans-serif; 
-  color: black;
-}
-
-h3{
-  color:black
-}
-
-h4{
-  color: black;
-  margin: 0 0 0.5em 0;
-}
-
-p {
-  font-family: sans-serif; 
-  color: black;
-  font-size: 1em;
-  margin: 0 auto 1em auto;
-}
-
-label{
-  font-size: 1em;
-  color:black;
-}
-
-::placeholder{
-  color: black;
-  font-size: 0.8rem;
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #707070;
+  background: #CCCCCC;
 }
 
 /****** Body Style *******/
@@ -47,32 +10,15 @@ label{
   display: grid;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
-.mainContainer{
-  display: grid;
-  grid-template: "back main next" 100%/ 10em 60em 10em;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.main{
-  width: 100%;
-  grid-area: main;
-}
-
-.nextBtnContainer{
-  grid-area: next;
-  display: inline;
-  margin: 19em auto;
-}
-
-.backBtnContainer{
-  grid-area: back;
-  display: inline;
-  margin: 19em auto;
+.form{
+  display: block;
+  position: relative;
+  width: 60%;
+  background: #fff;
+  margin: 50px auto;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 
@@ -152,41 +98,6 @@ label{
   outline: none;
 }
 
-#overviewBtn{
-  border: none;
-  background-color: transparent;/*#993333*/
-  text-decoration: none;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  transition-duration: 0.4s;
-}
-
-#formBtn{
-  border: none;
-  background-color: transparent;/*#993333*/
-  text-decoration: none;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 2.5px solid white;
-  transition-duration: 0.4s;
-  /*margin: -0.2rem 1rem 1rem auto;
-  box-shadow: 1px 1px 1px black;*/
-}
-
-#overviewBtn:hover{
-  color: #FF4E50;
-}
-#overviewBtn:focus{
-  outline: none;
-}
-
-#formBtn:hover{
-  color: #FF4E50;
-}
-#formBtn:focus{
-  outline: none;
-}
-
 /***** Button Styling *****/
 #submit{
   border: none;
@@ -205,43 +116,4 @@ label{
 }
 #submit:focus{
   outline: none;
-}
-
-#back{
-  border: none;
-  background-image: linear-gradient(#FF4E50 10%, #8A2B3C 90%); 
-  text-decoration: none;
-  color: white;
-  padding: 1rem 1.2rem;
-  border-radius: 50%;
-  transition-duration: 0.4s;
-  /*box-shadow: 1px 1px 1px black;*/
-}
-
-#back:hover{
-  background-image: linear-gradient(#FF4E50 40%, #8A2B3C);
-}
-
-#back:focus{
-  outline: none;
-}
-
-i {
-  border: solid white;
-  border-width: 0 5px 5px 0;
-  display: inline-block;
-  height: 1em;
-  width: 1em;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  margin: 2px 3px -1px -1px;
-}
-
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  margin: 2px -3px -1px 1px;
 }

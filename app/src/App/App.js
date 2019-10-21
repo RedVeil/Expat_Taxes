@@ -1,42 +1,27 @@
 import React from 'react';
 import './App.css';
-import { Landing } from "../Landing/Landing";
-import { Saved } from "../Saved/Saved";
 import { showHideGdpr } from "../utilities/GdprPopUp";
-import { createForms } from "../utilities/createForms";
 import { printDocument } from "../utilities/printDocument";
 import { gdprText } from "../databases/gdpr";
+import {steuerlicheErfassungFormData} from "../databases/steuerlicheErfassungFormData";
+import createFormSection from "../FormSection/FormSection";
 
 export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      landing: 1,
-      forms: null,
-      btnText: "Overview",
-      formID: 0,
       userInput: {},
-      index: 0,
     };
     this.onChangeSaveValue = this.onChangeSaveValue.bind(this);
     this.saveValue = this.saveValue.bind(this);
     this.saveFormValue = this.saveFormValue.bind(this);
     this.sendAll = this.sendAll.bind(this);
-    this.openSavedPage = this.openSavedPage.bind(this);
-    this.openFormPage = this.openFormPage.bind(this);
     this.nextForm = this.nextForm.bind(this);
-    this.previousForm = this.previousForm.bind(this);
-    this.changeIndex = this.changeIndex.bind(this);
-  };
-
-  componentDidMount() {
-    this.setState({ forms: createForms() })
   };
 
   onChangeSaveValue(event) {
     let updateUserInput = this.state.userInput;
     updateUserInput[event.target.name] = event.target.value;
-    console.log(updateUserInput)
     this.setState({ userInput: updateUserInput });
   };
 
@@ -59,26 +44,6 @@ export class App extends React.Component {
 
   sendAll() {
     printDocument(this.state.userInput)
-  };
-
-  openSavedPage() {
-    this.setState({ landing: null })
-    const overviewBtn = document.getElementById("overviewBtn")
-    const formBtn = document.getElementById("formBtn")
-    formBtn.style.borderBottom = "none";
-    overviewBtn.style.borderBottom = "2.5px solid white";
-  };
-
-  openFormPage() {
-    this.setState({ landing: 1 })
-    const formBtn = document.getElementById("formBtn")
-    const overviewBtn = document.getElementById("overviewBtn")
-    overviewBtn.style.borderBottom = "none";
-    formBtn.style.borderBottom = "2.5px solid white";
-  };
-
-  changeIndex(inputId) {
-    this.setState({ index: inputId })
   };
 
   nextForm() {
@@ -270,36 +235,18 @@ export class App extends React.Component {
     };
   };
 
-  previousForm() {
-    this.setState({ index: 0 })
-    this.setState(() =>
-      ({ formID: this.state.formID - 1 }))
-  };
-
   render() {
     return (
       <div className="App">
         <div className="navigationContainer">
           <h2 style={{ color: "white", margin: "0.1em 0 0 0.3em" }} id="pageTitle">Tax Helper </h2>
           <ul>
-            <button id="sendAll" onClick={this.sendAll}>Send all</button>
-            <button id="overviewBtn" onClick={this.openSavedPage}>Overview</button>
-            <button id="formBtn" onClick={this.openFormPage}>Form</button>
           </ul>
         </div>
-        <div className="mainContainer">
-          {this.state.landing ? (<div className="backBtnContainer">
-            {this.state.formID !== 0 ? <button id="back" onClick={this.previousForm}><i className="left"></i></button> : <p></p>}
-          </div>) : <div></div>}
-          <div className="main">
-            {this.state.landing ? <Landing forms={this.state.forms} saveValue={this.onChangeSaveValue} formID={this.state.formID}
-              nextForm={this.nextForm} previousForm={this.previousForm} openSavedPage={this.openSavedPage} index={this.state.index} changeIndex={this.changeIndex} />
-              : <Saved forms={this.state.forms} sendAll={this.sendAll} />}
-          </div>
-          {this.state.landing ? (<div className="nextBtnContainer">
-            {this.state.formID !== 53 ? <button id="submit" onClick={this.nextForm}><i className="right"></i></button>
-              : <button id="submit" onClick={this.openSavedPage}><i className="right"></i></button>}
-          </div>) : <div></div>}
+        <div className="form">
+          {steuerlicheErfassungFormData.map(function(section){
+          return createFormSection(section)})}
+          <button onClick={this.sendAll}>Done</button>
         </div>
         <div className="footer">
           <p style={{ color: "white", marginTop: "1em" }}>Thanks a lot for visiting my Website! If you have any questions regarding the site or with your "Anmeldung" feel free to ask me directly.</p>
