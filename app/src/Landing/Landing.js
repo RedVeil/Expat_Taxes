@@ -1,14 +1,12 @@
 import React from 'react';
-import { FormPage } from "../FormPage/FormPage";
 
-export class Landing extends React.Component {
+export class LandingPage extends React.Component {
   render() {
-    return (<div>
-      {this.props.forms ? <FormPage forms={this.props.forms} saveValue={this.props.saveValue} formID={this.props.formID}
-        nextForm={this.props.nextForm} previousForm={this.props.previousForm} index={this.props.index} changeIndex={this.props.changeIndex} /> : <p>Hello</p>}
+    return (
+    <div>
+      
     </div>
     )
   };
 }
 
-/**/

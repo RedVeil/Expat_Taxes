@@ -38,7 +38,7 @@ input:valid{
 
 input:focus + label, 
 input:valid + label{
-  top: -3.6em;
+  top: -3.8em;
   font-size: 0.7em;
   z-index: 2;
 }

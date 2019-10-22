@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-import { showHideGdpr } from "../utilities/GdprPopUp";
 import { printDocument } from "../utilities/printDocument";
-import { gdprText } from "../databases/gdpr";
 import { steuerlicheErfassungFormData } from "../databases/steuerlicheErfassungFormData";
 import createFormSection from "../FormSection/FormSection";
+import { footer } from "../databases/footer";
 
 
 
@@ -155,26 +154,8 @@ export class App extends React.Component {
           {formSections}
           <button onClick={this.sendAll}>Done</button>
         </div>
-        <div className="footer">
-          <p style={{ color: "white", marginTop: "1em" }}>Thanks a lot for visiting my Website! If you have any questions regarding the site or with your "Anmeldung" feel free to ask me directly.</p>
-          <p style={{ color: "white" }}>I hope it helped you and i would love to hear feedback from you! :)</p>
-          <p style={{ color: "white" }}>Consider leaving a tip it helps me to continue my work. <a href="https://paypal.me/pools/c/8htPxuQfTR">Paypal</a></p>
-          <p style={{ color: "white" }}>And if you really want to see it here you go: <button onClick={showHideGdpr} id="gdprButton">GDPR & Impressum</button></p>
-          <div id="gdpr" style={{ display: "none" }}>{gdprText}</div>
-        </div>
+        {footer}
       </div>
     )
   };
 };
-
-
-/*
-showTooltip(event){
-    const previousTooltip = document.getElementById(this.state.currentTooltipId);
-    previousTooltip.style.display = "none";
-    const newTooltipId = `${event.target.name}-tooltip`
-    const newTooltip = document.getElementById(newTooltipId);
-    newTooltip.style.display = "inline-block";
-    this.setState({currentTooltipid: newTooltipId})
-  }
-  */
