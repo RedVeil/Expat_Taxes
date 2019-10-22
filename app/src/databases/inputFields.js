@@ -216,9 +216,3 @@ const inputFields = [
 {id:744, name: "old_tax_id", xLocationId: null, yLocationId: null, formPage: 32, tooltip: "?", defaultValue: "yes", placeholder: "yes", type: "radio", autofocus: 1, index: 0, size: 8, margin: 1},       
 {id:745, name: "old_tax_id", xLocationId: null, yLocationId: null, formPage: 32, tooltip: "?", defaultValue: "no", placeholder: "no", type: "radio", autofocus: null, index: 1, size: 8, margin: 1},       
 ];
-
-
-
-for(let i in inputFields){
-    console.log(`{name: ${inputFields[i].name}, xLocationId: ${inputFields[i].xLocationId}, yLocationId: ${inputFields[i].yLocationId}, tooltip: <p>${inputFields[i].tooltip}</p>, defaultValue: "${inputFields[i].defaultValue}", placeholder: "${inputFields[i].placeholder}", type: ${inputFields[i].type}, size:${inputFields[i].size}, margin:${inputFields[i].margin}}`)
-}

@@ -4,20 +4,19 @@ import createFormContent from "./FormContent";
 import Grid from '@material-ui/core/Grid';
 import "./FormSection.css"
 
-export default function createFormSection(formSectionDict) {
-  const tooltips = formSectionDict.inputFields.map(function(inputField){
-    return  {id: inputField.name, text:inputField.tooltip}
-  });
 
-  function showTooltip(event){
-    let tooltip = document.getElementById(`${event.target.name}-tooltip`)
-    tooltip.style.display = "inline-block"
-  }
+export default function createFormSection(formSectionData, showTooltip, onChangeSave, handleRadioForms) {
+  let tooltips = [];
+  for (let row = 0; row < formSectionData.inputFields.length; row++) {
+    let i = 0
+    if (formSectionData.inputFields[row][0] === "invisible"){
+      i=1
+    };
+    for (i; i < formSectionData.inputFields[row].length; i++) {
+      tooltips.push({ id: formSectionData.inputFields[row][i].name, text: formSectionData.inputFields[row][i].tooltip })
+    }
+  };
 
-  function onChangeSave(){
-    return true
-  }
-   
   return (
     <div className="formSection">
       <Grid container spacing={0}>
@@ -28,11 +27,17 @@ export default function createFormSection(formSectionDict) {
         </Grid>
         <Grid item xs={9}>
           <div className="formContainer">
-            <h2>{formSectionDict.title}</h2>         
-            {createFormContent(formSectionDict.inputFields, showTooltip, onChangeSave)}
+            <h2>{formSectionData.title}</h2>
+            {createFormContent(formSectionData.inputFields, formSectionData.title, showTooltip, onChangeSave, handleRadioForms)}
           </div>
         </Grid>
       </Grid>
     </div>
   )
 };
+
+/*
+
+
+
+*/
