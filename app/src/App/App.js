@@ -78,11 +78,19 @@ export class App extends React.Component {
       for(let i = 1; i < 6; i++){
         this.showContainer(`Your Partner-row-${i}`)
       };
+      this.showContainer(`Exptected Income-row-2`);
+      this.showContainer(`Exptected Income-row-4`);
+      this.showContainer(`Exptected Income-row-8`);
+      this.showContainer(`Exptected Income-row-10`);
     };
     if(this.state.userInput["married"] === "no"){
       for(let i = 1; i < 6; i++){
         this.hideContainer(`Your Partner-row-${i}`)
       };
+      this.hideContainer(`Exptected Income-row-2`);
+      this.hideContainer(`Exptected Income-row-4`);
+      this.hideContainer(`Exptected Income-row-8`);
+      this.hideContainer(`Exptected Income-row-10`);
     };
 
     if (this.state.userInput["live_together"] === "yes") {
@@ -151,11 +159,11 @@ export class App extends React.Component {
     };
 
     if (this.state.userInput["old_tax_id"] === "no") {
-      this.hideContainer("Previous German Tax Id-row-1")
+      this.hideContainer("Previous Life-row-3")
       this.saveValue("old_tax_no", "x")
     };
     if (this.state.userInput["old_tax_id"] === "yes") {
-      this.showContainer("Previous German Tax Id-row-1")
+      this.showContainer("Previous Life-row-3")
       this.eraseValue("old_tax_no")
     };
 

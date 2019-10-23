@@ -12,8 +12,8 @@ export default function createInputField(inputField, onFocusFunction, onChangeFu
       inputField:"10em",
     },
     large:{
-      background:"24.2em",
-      inputField:"23em"
+      background:"23.4em",
+      inputField:"22.2em"
     }
   };
 
@@ -34,7 +34,7 @@ export default function createInputField(inputField, onFocusFunction, onChangeFu
         onChange={onChangeFunction} 
         required
         style={{width:widthStyle[inputField.size].inputField}}/>
-      <label htmlFor={inputField.name}>{inputField.placeholder}</label>
+      <label htmlFor={inputField.name} style={{width:widthStyle[inputField.size].inputField}}>{inputField.placeholder}</label>
     </div>
   )
 };
