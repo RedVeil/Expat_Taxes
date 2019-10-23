@@ -10,8 +10,23 @@ import {pageEight} from "../databases/pageEight";
 import {xLocations} from "../databases/xLocations";
 import {yLocations} from "../databases/yLocations";
 import { inputFields } from "../databases/inputFields";
+import { findSepaInfos, findDocumentRecipientInfos} from "./findInfos";
+import {sepaMandateText} from "../databases/sepaMandateText";
+import {documentMandateText} from "../databases/documentMandateText";
 
 const pageArray = [pageOne,pageTwo,pageThree,pageFour,pageFive,pageSix,pageSeven,pageEight]
+
+function generateSepaMandate(infos, pdf){
+  pdf.addPage()
+  //add infos to Text
+  //print Text
+  return pdf
+};
+
+function generateDocumentMandate(infos, pdf){
+  pdf.addPage()
+  return pdf
+};
 
 function createFirstPage(inputsPageOne){
   var pdf = new jsPDF('p', 'pt', 'a4');
@@ -97,15 +112,27 @@ export function printDocument(inputs){
   });
 
   const inputPages = [inputsPageOne,inputsPageTwo,inputsPageThree,inputsPageFour,inputsPageFive,inputsPageSix,inputsPageSeven,inputsPageEight];
-  const sepa = inputsPageSeven.find(function(entry){
-    return entry.name === "SEPA"}
-  );
-  //SEPA bla
-  // Doc recipient?
   inputPages.map(addXYCoordinates);
   var pdf = createFirstPage(inputPages[0])
   for (var i=1; i<8;i++){
     pdf = generatePage(pdf, pageArray[i], inputPages[i], i+1)
   };
+
+  const sepa = inputsPageSeven.find(function(entry){
+    return entry.name === "SEPA"}
+  );
+  if(sepa.value === "yes"){
+    const sepaInfos = findSepaInfos(inputs);
+    pdf = generateSepaMandate(sepaInfos);
+  };
+
+  const documentRecipient = inputsPageThree.find(function(entry){
+    return entry.name === "vollmacht_x"
+  });
+  if(documentRecipient === "x"){
+    const documentRecipientInfos = findDocumentRecipientInfos(inputs);
+    pdf = generateDocumentMandate(documentRecipientInfos)
+  };
+
   pdf.save("Steuerliche Anmeldung.pdf");
 };

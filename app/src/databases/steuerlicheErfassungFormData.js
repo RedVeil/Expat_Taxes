@@ -74,7 +74,7 @@ export const steuerlicheErfassungFormData = [
 
 ]},
 {title: "SEPA", inputFields:[
-  [{name: "SEPA", text:"Do you want to use a SEPA-Mandat?", tooltip: <p>A SEPA-Mandat allows the tax office to automatically collect your taxes. Otherwise you have to transfer your taxes manually every month.<br/><br/>A SEPA-Mandat is easier and a good option if your account is always covered. It always comes on a fixed date but if you cant pay it you have to pay extra penalties. Dont sign this if you want more flexibility about the timing of your payments or if your account is not covered through out the whole month.</p>, defaultValue: ["yes","no"], placeholder: ["yes","no"], type: "radio", size: "medium", margin: "medium"},
+  [{name: "SEPA", text:"Do you want to use a SEPA-Mandate?", tooltip: <p>A SEPA-Mandate allows the tax office to automatically collect your taxes. Otherwise you have to transfer your taxes manually every month.<br/><br/>A SEPA-Mandate is easier and a good option if your account is always covered. It always comes on a fixed date but if you cant pay it you have to pay extra penalties. Dont sign this if you want more flexibility about the timing of your payments or if your account is not covered through out the whole month.</p>, defaultValue: ["yes","no"], placeholder: ["yes","no"], type: "radio", size: "medium", margin: "medium"},
   {name: "sepa_x", tooltip: <p>null</p>, defaultValue: "x", placeholder: null, type: null, size:null, margin:null},],
   
 ]},
