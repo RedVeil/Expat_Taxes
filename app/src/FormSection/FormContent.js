@@ -11,8 +11,11 @@ function createFormRow(counter, rowCounter, rowInputFields, sectionTitle, showTo
     if(rowInputFields[i].size != null && rowInputFields[i].type !== "radio"){
       formRow.push(createInputField(rowInputFields[i], showTooltip, onChangeSave))
     };
+    if(rowInputFields[i].type === "text" && rowInputFields[i].text){
+      formRow.push(<h4 className="rowTitle">{rowInputFields[i].text}</h4>)
+    }
   };
-  return <div className="row" id={`${sectionTitle}-row-${rowCounter}`} style={{display:displayStyle}}>{formRow}</div>;
+  return <div className="row" id={`${sectionTitle}-row-${rowCounter}`} style={{display:displayStyle, padding:"0.2 0 0.2em 0"}}>{formRow}</div>;
 };
 
 
@@ -27,6 +30,6 @@ export default function createFormSection(inputFields, sectionTitle, showTooltip
     };
   };
   return(
-    <div style={{padding:"0 0 1.2em 0"}}>{formSectionInputFields}</div>
+    <div style={{padding:"0 0 0 2em"}}>{formSectionInputFields}</div>
   )
 }

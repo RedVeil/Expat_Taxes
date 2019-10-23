@@ -21,7 +21,6 @@ input{
   font-weight: bold;
   font-size: 16px;
   height:1em;
-  width:14em;
   padding: 1.2em 0.4em 0.5em 0.5em;
   border-radius: 5px;
   z-index:2;
@@ -47,9 +46,7 @@ input:valid + label{
   display:inline-block;
   background: #EEEEEE;
   height:3.05em;
-  width:15.2em;
   border-radius: 5px;
-  margin: 1em;
   overflow: hidden;
 }
 

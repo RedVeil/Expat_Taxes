@@ -13,10 +13,19 @@ export default function createRadioForm(radioForm, onFocusFunction,handleRadioFo
       </div>
     )
   }
+
+  const marginStyle = {
+    small:"0.5em",
+    medium:"1em",
+    large:"1em",
+  };
+
   return (
-    <form className="radioForm">
-      <h3>Church Tax:</h3>
-      <div className="radioButtons">{newRadioForm}</div>
-    </form>
+    <div className="radioForm" style={{marginRight:marginStyle[radioForm.margin]}}>
+      <form >
+        <h3>{radioForm.text}</h3>
+        <div className="radioButtons">{newRadioForm}</div>
+      </form>
+    </div>
   )
   };

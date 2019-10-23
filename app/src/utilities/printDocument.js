@@ -24,6 +24,7 @@ function createFirstPage(inputsPageOne){
 };
 
 function generatePage(pdf, page, inputs, counter){
+  console.log(inputs)
   pdf.addPage()
   pdf.addImage(page, "JPG",0,0, 590, 840, counter, "FAST")
   inputs.map(input =>{
@@ -70,9 +71,6 @@ export function printDocument(inputs){
   const inputsPageSix = [];
   const inputsPageSeven = [];
   const inputsPageEight = [];
-  console.log("inputs: ", inputs)
-  console.log("type:", typeof(inputs))
-  console.log(Object.keys(inputs))
   const newInputs = addInfoToInput(inputs);
   newInputs.map(input => {
     if(input.id < 101){
@@ -104,7 +102,6 @@ export function printDocument(inputs){
   );
   //SEPA bla
   // Doc recipient?
-  if(sepa)
   inputPages.map(addXYCoordinates);
   var pdf = createFirstPage(inputPages[0])
   for (var i=1; i<8;i++){

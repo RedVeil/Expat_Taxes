@@ -20,12 +20,12 @@ export default function createFormSection(formSectionData, showTooltip, onChange
   return (
     <div className="formSection">
       <Grid container spacing={0}>
-        <Grid item xs={3}>
+        <Grid item xs={0} sm={4} md={3} lg={3}>
           <div className="tooltipContainer">
             {createTooltips(tooltips)}
           </div>
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={12} sm={8} md={9} lg={9}>
           <div className="formContainer">
             <h2>{formSectionData.title}</h2>
             {createFormContent(formSectionData.inputFields, formSectionData.title, showTooltip, onChangeSave, handleRadioForms)}

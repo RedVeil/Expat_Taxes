@@ -15,7 +15,7 @@ body{
 .form{
   display: block;
   position: relative;
-  width: 60%;
+  width: 70%;
   background: #fff;
   margin: 50px auto;
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
@@ -117,3 +117,21 @@ body{
 #submit:focus{
   outline: none;
 }
+
+
+@media(min-width:1060px) and (max-width:1210px){
+  .form{
+    width:80%;
+  }
+}
+@media(min-width:940px) and (max-width:1060px){
+  .form{
+    width:90%;
+  }
+}
+@media(max-width:940px){
+  .form{
+    width:100%;
+  }
+}
+

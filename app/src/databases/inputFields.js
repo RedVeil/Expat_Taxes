@@ -1,4 +1,4 @@
-const inputFields = [
+export const inputFields = [
 {id:1, name: "finanzamt", xLocationId: 1, yLocationId: 1, formPage: 6, tooltip: "The name of your tax office is based on your district. <br/> If follows this pattern \"Finanzamt\" + Area. If you live in Mitte your Finanzamt would be called: \"Finanzamt Mitte\".", defaultValue: null, placeholder: "Finanzamt", type: null, autofocus: 1, index: 0, size: 12, margin: 1},
 {id:2, name: "u_firstname", xLocationId: 2, yLocationId: 2, formPage: 0, tooltip: "Hints, Help and Tips will be displayed on this side. If you have a middle name add it here.", defaultValue: null, placeholder: "First Name", type: null, autofocus: null, index: 0, size: 8, margin: 1},
 {id:3, name: "u_lastname", xLocationId: 1, yLocationId: 2, formPage: 0, tooltip: "...", defaultValue: null, placeholder: "Last Name", type: null, autofocus: null, index: 1, size: 8, margin: 1},     
