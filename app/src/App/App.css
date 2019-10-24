@@ -21,36 +21,6 @@ body{
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
-
-/****** Navigation Style *********/
-
-#pageTitle{
-  display: fixed;
-  margin: -0.5em -1em -2.5em -0.5em;
-}
-
-.navigationContainer {
-  display: grid;
-  background-color: #112533;
-  width: 100%;
-  height: 4em;
-}
-
-.navigationContainer ul {
-  text-align: center;
-  margin: auto auto -0.01em auto;
-}
-
-.navigationContainer li {
-  display: inline-block;
-  color: #FFF;
-  font-family: 'Oswald', sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  padding: 0em 1em;
- 
-}
-
 .link{
   color:white;
 }
@@ -80,44 +50,6 @@ body{
 #gdprButton:focus{
   outline: none;
 }
-
-/***** Link Styling ******/
-#sendAll{
-  border: none;
-  background-color: transparent; /*#993333 #4D1212*/
-  text-decoration: none;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  transition-duration: 0.4s;
-}
-
-#sendAll:hover{
-  color: #992323;
-}
-#sendAll:focus{
-  outline: none;
-}
-
-/***** Button Styling *****/
-#submit{
-  border: none;
-  background-image: linear-gradient(#FF4E50 10%, #8A2B3C 90%); 
-  text-decoration: none;
-  color: white;
-  padding: 1rem 1.2rem;
-  border-radius: 50%;
-  transition-duration: 0.4s;
-  margin: auto;
-  /*box-shadow: 1px 1px 1px black;*/
-}
-
-#submit:hover{
-  background-image: linear-gradient(#FF4E50 40%, #8A2B3C);
-}
-#submit:focus{
-  outline: none;
-}
-
 
 @media(min-width:1060px) and (max-width:1210px){
   .form{

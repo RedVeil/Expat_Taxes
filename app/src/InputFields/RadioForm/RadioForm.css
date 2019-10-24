@@ -64,6 +64,7 @@ input[type=radio] {
 
 .radioForm {
     display: inline-block;
+    margin: 0 0 0 0.5em;
 }
 
 .radioButtonContainer {

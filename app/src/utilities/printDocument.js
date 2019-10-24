@@ -10,7 +10,7 @@ import {pageEight} from "../databases/pageEight";
 import {xLocations} from "../databases/xLocations";
 import {yLocations} from "../databases/yLocations";
 import { inputFields } from "../databases/inputFields";
-import { findSepaInfos, findDocumentRecipientInfos} from "./findInfos";
+import { findInfos } from "./findInfos";
 import {sepaMandateText} from "../databases/sepaMandateText";
 import {documentMandateText} from "../databases/documentMandateText";
 
@@ -119,18 +119,20 @@ export function printDocument(inputs){
   };
 
   const sepa = inputsPageSeven.find(function(entry){
-    return entry.name === "SEPA"}
+    return entry.name ==="SEPA"}
   );
   if(sepa.value === "yes"){
-    const sepaInfos = findSepaInfos(inputs);
+    const sepaRelevantKeys = ["holder","iban_de","iban_int","bic","u_strasse","u_hausnummer","u_postleitzahl","u_city"];
+    const sepaInfos = findInfos(inputs, sepaRelevantKeys);
     pdf = generateSepaMandate(sepaInfos);
   };
 
   const documentRecipient = inputsPageThree.find(function(entry){
     return entry.name === "vollmacht_x"
   });
-  if(documentRecipient === "x"){
-    const documentRecipientInfos = findDocumentRecipientInfos(inputs);
+  if(documentRecipient.value === "x"){
+    const documentRelevantKeys = [""]
+    const documentRecipientInfos = findInfos(inputs, documentRelevantKeys);
     pdf = generateDocumentMandate(documentRecipientInfos)
   };
 
