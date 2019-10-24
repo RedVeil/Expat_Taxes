@@ -13,12 +13,12 @@ export default function createFormSection(formSectionData, showTooltip, onChange
       i=1
     };
     for (i; i < formSectionData.inputFields[row].length; i++) {
-      tooltips.push({ id: formSectionData.inputFields[row][i].name, text: formSectionData.inputFields[row][i].tooltip })
+      tooltips.push({ id: formSectionData.inputFields[row][i].name, text: formSectionData.inputFields[row][i].tooltip, top:formSectionData.inputFields[row][i].top})
     }
   };
 
   return (
-    <div className="formSection">
+    <div className="formSection" id={`${formSectionData.title}-section`} style={{display:formSectionData.display}}>
       <Grid container spacing={0}>
         <Grid item xs={0} sm={4} md={3} lg={3}>
           <div className="tooltipContainer">
