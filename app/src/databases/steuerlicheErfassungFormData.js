@@ -1,8 +1,5 @@
 import React from "react";
 
-
-
-
 export const steuerlicheErfassungFormData = [
 {title: "Personal Informations",display:"block", inputFields:[
   [{name: "u_firstname", tooltip: <p className="tooltipText">If you have a middle name add it here.</p>, top: 5, defaultValue: null, placeholder: "First Name", type: null, size: "medium", margin: "medium"},
@@ -179,8 +176,10 @@ export const steuerlicheErfassungFormData = [
   [{name: "u_betrag4", tooltip: <p className="tooltipText">Enter your expected income through other sources for the first year of your business. 
   <br/><br/>This could be child benefits, BaföG, scholarships or grants etc.<br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end.</p>,
    top: 5, defaultValue: null, placeholder: "Other Income", type: null, size: "medium", margin: "medium"},
-  {name: "u_sonderausgaben1",tooltip: <p className="tooltipText">Enter the sum of your estimated special expenses. This<br/>All of these numbers should estimates.<br/></p>, top: 11.5, defaultValue: null, placeholder: "Special Expenses", type: null, size: "medium", margin: "medium"},
-  {name: "u_steuerabzug1", tooltip: <p className="tooltipText">...</p>, top: 11.5, defaultValue: null, placeholder: "Tax Deductions", type: null, size: "medium", margin: "medium"},
+  {name: "u_sonderausgaben1",tooltip: <p className="tooltipText">Enter the sum of your estimated special expenses. Those could be insurance, professional liability etc.
+  <br/>For a more comprehensive list click here: <a href="" target="_blank" rel="noopener noreferrer">german</a>
+  <a href="" target="_blank" rel="noopener noreferrer">english</a><br/></p>, top: 11.5, defaultValue: null, placeholder: "Special Expenses", type: null, size: "medium", margin: "medium"},
+  {name: "u_steuerabzug1", tooltip: <p className="tooltipText">Enter the sum of your estimated special expenses.</p>, top: 11.5, defaultValue: null, placeholder: "Tax Deductions", type: null, size: "medium", margin: "medium"},
   {name: "sum1", tooltip: <p className="tooltipText">...</p>, top: 16, defaultValue: null, placeholder: "Total Revenue", type: null, size: "medium", margin: "medium"},],
   [{type:"text", text:"Second Year"}],
   [{name: "u_betrag6", tooltip: <p className="tooltipText"></p>, top: 23, defaultValue: null, placeholder: "Selfemployment Income", type: null, size: "medium", margin: "medium"},
