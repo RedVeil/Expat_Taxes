@@ -23,7 +23,7 @@ export default function createRadioForm(radioForm, onFocusFunction,handleRadioFo
   return (
     <div className="radioForm" style={{marginRight:marginStyle[radioForm.margin]}}>
       <form >
-        <h3>{radioForm.text}</h3>
+        <h3 className="radioText">{radioForm.text}</h3>
         <div className="radioButtons">{newRadioForm}</div>
       </form>
     </div>
