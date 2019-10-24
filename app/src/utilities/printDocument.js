@@ -11,20 +11,26 @@ import {xLocations} from "../databases/xLocations";
 import {yLocations} from "../databases/yLocations";
 import { inputFields } from "../databases/inputFields";
 import { findInfos } from "./findInfos";
-import {sepaMandateText} from "../databases/sepaMandateText";
-import {documentMandateText} from "../databases/documentMandateText";
+import {sepaMandateXY} from "../databases/sepaMandateXY";
+import {documentMandateXY} from "../databases/documentMandateXY";
+import { sepaMandate } from "..databases/sepaMandate";
 
 const pageArray = [pageOne,pageTwo,pageThree,pageFour,pageFive,pageSix,pageSeven,pageEight]
 
 function generateSepaMandate(infos, pdf){
   pdf.addPage()
-  //add infos to Text
-  //print Text
+  pdf.addImage(sepaMandate, "JPG",0,0, 590, 840,"sepa","FAST")
+  infos.map(info =>{
+    return pdf.text(info.value, info.x,info.y)
+  })
   return pdf
 };
 
 function generateDocumentMandate(infos, pdf){
   pdf.addPage()
+  infos.map(info =>{
+    return pdf.text(info.value, info.x,info.y)
+  })
   return pdf
 };
 
@@ -65,6 +71,14 @@ function addXYCoordinates(inputs){
   inputs.map(addYLocation)
 };
 
+function addXYtoInfos(inputs, xyArray){
+  const inputsWithLocations = inputs.map(input =>{
+
+  }
+  );
+  return inputsWithLocations;
+};
+
 function addInfoToInput(inputs){
   let newInputs = []
   for (let key in inputs){
@@ -74,7 +88,7 @@ function addInfoToInput(inputs){
     const newInput = {id:foundInputField.id, name:foundInputField.name, xLocationId: foundInputField.xLocationId, yLocationId: foundInputField.yLocationId, userInput:inputs[key]}
     newInputs.push(newInput)
   }
-  return newInputs
+  return newInputs;
 };
 
 export function printDocument(inputs){
@@ -124,7 +138,8 @@ export function printDocument(inputs){
   if(sepa.value === "yes"){
     const sepaRelevantKeys = ["holder","iban_de","iban_int","bic","u_strasse","u_hausnummer","u_postleitzahl","u_city"];
     const sepaInfos = findInfos(inputs, sepaRelevantKeys);
-    pdf = generateSepaMandate(sepaInfos);
+    const sepaInfosWithLocations = addXYtoInfos(sepaInfos, sepaMandateXY)
+    pdf = generateSepaMandate(sepaInfosWithLocations);
   };
 
   const documentRecipient = inputsPageThree.find(function(entry){
@@ -133,7 +148,8 @@ export function printDocument(inputs){
   if(documentRecipient.value === "x"){
     const documentRelevantKeys = [""]
     const documentRecipientInfos = findInfos(inputs, documentRelevantKeys);
-    pdf = generateDocumentMandate(documentRecipientInfos)
+    const documentInfosWithLocations = addXYtoInfos(documentRecipientInfos, documentMandateXY)
+    pdf = generateDocumentMandate(documentInfosWithLocations)
   };
 
   pdf.save("Steuerliche Anmeldung.pdf");
