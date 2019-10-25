@@ -13,7 +13,7 @@ import { inputFields } from "../databases/inputFields";
 import { findInfos } from "./findInfos";
 import {sepaMandateXY} from "../databases/sepaMandateXY";
 import {documentMandateXY} from "../databases/documentMandateXY";
-import { sepaMandate } from "..databases/sepaMandate";
+import { sepaMandate } from "../databases/sepaMandate";
 
 const pageArray = [pageOne,pageTwo,pageThree,pageFour,pageFive,pageSix,pageSeven,pageEight]
 
@@ -45,7 +45,6 @@ function createFirstPage(inputsPageOne){
 };
 
 function generatePage(pdf, page, inputs, counter){
-  console.log(inputs)
   pdf.addPage()
   pdf.addImage(page, "JPG",0,0, 590, 840, counter, "FAST")
   inputs.map(input =>{
@@ -73,21 +72,23 @@ function addXYCoordinates(inputs){
 
 function addXYtoInfos(inputs, xyArray){
   const inputsWithLocations = inputs.map(input =>{
-
-  }
-  );
+    return {name:input.name, value:input.value, x:xyArray[input.name].x,y:xyArray[input.name].y}
+  });
   return inputsWithLocations;
 };
 
 function addInfoToInput(inputs){
+  console.log(inputs)
   let newInputs = []
   for (let key in inputs){
     const foundInputField = inputFields.find(function(entry){
       return entry.name === key
     })
-    const newInput = {id:foundInputField.id, name:foundInputField.name, xLocationId: foundInputField.xLocationId, yLocationId: foundInputField.yLocationId, userInput:inputs[key]}
-    newInputs.push(newInput)
-  }
+    if (foundInputField !== undefined && foundInputField.xLocationId !== null && inputs[key] !== undefined){
+      const newInput = {id:foundInputField.id, name:foundInputField.name, xLocationId: foundInputField.xLocationId, yLocationId: foundInputField.yLocationId, userInput:inputs[key]}
+      newInputs.push(newInput)
+    };
+  };
   return newInputs;
 };
 
@@ -132,24 +133,29 @@ export function printDocument(inputs){
     pdf = generatePage(pdf, pageArray[i], inputPages[i], i+1)
   };
 
-  const sepa = inputsPageSeven.find(function(entry){
-    return entry.name ==="SEPA"}
-  );
-  if(sepa.value === "yes"){
+  
+  if(inputs["SEPA"] === "yes"){
     const sepaRelevantKeys = ["holder","iban_de","iban_int","bic","u_strasse","u_hausnummer","u_postleitzahl","u_city"];
-    const sepaInfos = findInfos(inputs, sepaRelevantKeys);
-    const sepaInfosWithLocations = addXYtoInfos(sepaInfos, sepaMandateXY)
-    pdf = generateSepaMandate(sepaInfosWithLocations);
-  };
+    const sepaInfos = [];
+    for(let i=0; i<sepaRelevantKeys.length;i++){
+      if (inputs[sepaRelevantKeys[i]]){
+        sepaInfos.push({name:sepaRelevantKeys[i],value:inputs[sepaRelevantKeys[i]]});
+      };
+    };
 
-  const documentRecipient = inputsPageThree.find(function(entry){
-    return entry.name === "vollmacht_x"
-  });
-  if(documentRecipient.value === "x"){
+    const sepaInfosWithLocations = addXYtoInfos(sepaInfos, sepaMandateXY)
+    sepaInfosWithLocations.push({name:"country", value:"Deutschland",x:70,y:480})
+    pdf = generateSepaMandate(sepaInfosWithLocations, pdf);
+  };
+  
+  if(inputs["vollmacht_x"]=== "x"){
+    console.log("vollmacht")
+    /*
     const documentRelevantKeys = [""]
     const documentRecipientInfos = findInfos(inputs, documentRelevantKeys);
     const documentInfosWithLocations = addXYtoInfos(documentRecipientInfos, documentMandateXY)
     pdf = generateDocumentMandate(documentInfosWithLocations)
+    */
   };
 
   pdf.save("Steuerliche Anmeldung.pdf");

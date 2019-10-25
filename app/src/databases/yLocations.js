@@ -22,7 +22,7 @@ export const yLocations = {
     21: 89,
     22: 114,
     23: 139,
-    24: null,
+    24: 164,
     25: null,
     26: null,
     27: null,
