@@ -74,33 +74,36 @@ export default class SteuerlicheErfassungForm extends React.Component {
       for(let i = 1; i < 6; i++){
         this.showContainer(`Your Partner-row-${i}`)
       };
-      this.showContainer(`Partner Exptected Income-section`);
+      this.showContainer(`Partner Expected Income-section`);
     };
     if(this.state.userInput["married"] === "no"){
       for(let i = 1; i < 6; i++){
         this.hideContainer(`Your Partner-row-${i}`)
       };
-      this.hideContainer(`Partner Exptected Income-section`);
+      this.hideContainer(`Partner Expected Income-section`);
     };
 
     if (this.state.userInput["live_together"] === "yes") {
       this.hideContainer(`Your Partner-row-6`);
-      /*const partnerAdressOverwrite = {
+      const partnerAdressOverwrite = {
         "p_strasse": "u_strasse", "p_hausnummer": "u_hausnummer", "p_hausnummer_zusatz": "u_hausnummer_zusatz",
         "p_postleitzahl": "u_postleitzahl", "p_city": "u_city"
-      }
+      };
       for (var key in partnerAdressOverwrite) {
-        this.saveValue(key, this.state.userInput[partnerAdressOverwrite[key]])
-      }*/
+        if(this.state.userInput[partnerAdressOverwrite[key]] !== undefined){
+          this.saveValue(key, this.state.userInput[partnerAdressOverwrite[key]])
+        };
+      };
     };
     if (this.state.userInput["live_together"] === "no") {
+      console.log(this.state.userInput)
       this.showContainer(`Your Partner-row-6`);
-      /*const erasePartnerAdress = [
+      const erasePartnerAdress = [
         "p_strasse","p_hausnummer", "p_hausnummer_zusatz",
         "p_postleitzahl", "p_city"];
-      for (let i=0; erasePartnerAdress.length; i++) {
+      for (let i=0; i<erasePartnerAdress.length; i++) {
         this.eraseValue(erasePartnerAdress[i])
-      };*/
+      };
     };
 
     if (this.state.userInput["old_marriage"] === "yes") {
@@ -159,7 +162,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
 
     if (this.state.userInput["dif_firm_address"] === "home") {
       for(let i = 1; i < 4; i++){
-        this.hideContainer(`Workplace-row-${i}`)
+        this.hideContainer(`Business Adress-row-${i}`)
       };
       const fullName = `${this.state.userInput["u_firstname"]},${this.state.userInput["u_lastname"]}`;
       const inputFirmAdressOverwrite = {
@@ -174,15 +177,15 @@ export default class SteuerlicheErfassungForm extends React.Component {
     };
     if (this.state.userInput["dif_firm_address"] === "not home") {
       for(let i = 1; i < 4; i++){
-        this.showContainer(`Workplace-row-${i}`)
+        this.showContainer(`Business Adress-row-${i}`)
       };
       const eraseFirmAdress = [
         "firm_bezeichnung", "firm_strasse", "firm_hausnummer",
         "firm_adressergaenzung", "firm_postleitzahl", "firm_city",
         "firm_tel_int_vorwahl", "firm_vorwahl_tel", "firm_rufnummer_tel",
         "firm_e_mail", "firm_website"];
-      for (let y=0; y<eraseFirmAdress.length;y++){
-        this.eraseValue(eraseFirmAdress[y])
+      for (let i=0; i<eraseFirmAdress.length;i++){
+        this.eraseValue(eraseFirmAdress[i])
       };
     };
 

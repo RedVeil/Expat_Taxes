@@ -145,6 +145,16 @@ export const inputFields = [
 {id:332, name: "new_tax_id", xLocationId: 22, yLocationId: 80, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
 {id:333, name: "new_steuernummer", xLocationId: 33, yLocationId: 80, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
 {id:334, name: "new_ustid", xLocationId: 29, yLocationId: 81, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
+{id:335, name: "handelsregister_yes", xLocationId: 15, yLocationId: 81,defaultValue: "x",},
+{id:336, name: "handelsregister_no", xLocationId: 13, yLocationId: 81,defaultValue: "x",},
+{id:337, name: "registration_intended", xLocationId: 12, yLocationId: 81,defaultValue: "x",},
+{id:338, name: "registration_done", xLocationId: 12, yLocationId: 81,defaultValue: "x",},
+{id:339, name: "registration_done_date", xLocationId: 17, yLocationId: 81,defaultValue: "",},
+{id:340, name: "handelsregister_date", xLocationId: 17, yLocationId: 81,defaultValue: "",},
+{id:341, name: "handelsregister_city", xLocationId: 15, yLocationId: 81,defaultValue: "",},
+{id:342, name: "registry_number", xLocationId: 15, yLocationId: 81,defaultValue: "",},
+
+
 
 {id:401, name: "u_betrag1", xLocationId: 38, yLocationId: 82, formPage: 39, tooltip: "...", defaultValue: null, placeholder: "Freelance Income", type: null, autofocus: 1, index: 0, size: 8, margin: 1},
 {id:402, name: "u_betrag2", xLocationId: 38, yLocationId: 83, formPage: 39, tooltip: "...", defaultValue: null, placeholder: "Employee Salary", type: null, autofocus: null, index: 1, size: 8, margin: 1},
@@ -154,6 +164,8 @@ export const inputFields = [
 {id:406, name: "u_betrag6", xLocationId: 35, yLocationId: 83, formPage: 40, tooltip: "...", defaultValue: null, placeholder: "Employee Salary", type: null, autofocus: null, index: 1, size: 8, margin: 1},
 {id:407, name: "u_betrag7", xLocationId: 35, yLocationId: 84, formPage: 40, tooltip: "...", defaultValue: null, placeholder: "Capital Gains", type: null, autofocus: null, index: 2, size: 8, margin: 1},
 {id:408, name: "u_betrag8", xLocationId: 35, yLocationId: 85, formPage: 40, tooltip: "...", defaultValue: null, placeholder: "Other Income", type: null, autofocus: null, index: 3, size: 8, margin: 1},
+{id:427, name: "u_betrag9", xLocationId: 38, yLocationId: 81, formPage: 40, tooltip: "...", defaultValue: null, placeholder: "Business Revenue", type: null, autofocus: null, index: 2, size: 8, margin: 1},
+{id:428, name: "u_betrag10", xLocationId: 35, yLocationId: 81, formPage: 40, tooltip: "...", defaultValue: null, placeholder: "Business Revenue", type: null, autofocus: null, index: 3, size: 8, margin: 1},
 {id:409, name: "p_betrag1", xLocationId: 34, yLocationId: 82, formPage: 44, tooltip: "...", defaultValue: null, placeholder: "Freelance Income", type: null, autofocus: 1, index: 0, size: 8, margin: 1},
 {id:410, name: "p_betrag2", xLocationId: 34, yLocationId: 83, formPage: 44, tooltip: "...", defaultValue: null, placeholder: "Employee Salary", type: null, autofocus: null, index: 1, size: 8, margin: 1},
 {id:411, name: "p_betrag3", xLocationId: 34, yLocationId: 84, formPage: 44, tooltip: "...", defaultValue: null, placeholder: "Capital Gains", type: null, autofocus: null, index: 2, size: 8, margin: 1},
@@ -162,6 +174,8 @@ export const inputFields = [
 {id:414, name: "p_betrag6", xLocationId: 36, yLocationId: 83, formPage: 45, tooltip: "...", defaultValue: null, placeholder: "Employee Salary", type: null, autofocus: null, index: 1, size: 8, margin: 1},
 {id:415, name: "p_betrag7", xLocationId: 36, yLocationId: 84, formPage: 45, tooltip: "...", defaultValue: null, placeholder: "Capital Gains", type: null, autofocus: null, index: 2, size: 8, margin: 1},
 {id:416, name: "p_betrag8", xLocationId: 36, yLocationId: 85, formPage: 45, tooltip: "...", defaultValue: null, placeholder: "Other Income", type: null, autofocus: null, index: 3, size: 8, margin: 1},
+{id:429, name: "p_betrag9", xLocationId: 34, yLocationId: 81, formPage: 45, tooltip: "...", defaultValue: null, placeholder: "Business Revenue", type: null, autofocus: null, index: 2, size: 8, margin: 1},
+{id:430, name: "p_betrag10", xLocationId: 36, yLocationId: 81, formPage: 45, tooltip: "...", defaultValue: null, placeholder: "Business Revenue", type: null, autofocus: null, index: 3, size: 8, margin: 1},
 {id:417, name: "u_sonderausgaben1", xLocationId: 22, yLocationId: 86, formPage: 41, tooltip: "...", defaultValue: null, placeholder: "Amount in \u20ac", type: null, autofocus: 1, index: 0, size: 8, margin: 1},
 {id:418, name: "p_sonderausgaben1", xLocationId: 34, yLocationId: 86, formPage: 46, tooltip: "...", defaultValue: null, placeholder: "Amount in \u20ac", type: null, autofocus: 1, index: 0, size: 8, margin: 1},
 {id:419, name: "u_sonderausgaben2", xLocationId: 35, yLocationId: 86, formPage: 42, tooltip: "...", defaultValue: null, placeholder: "Amount in \u20ac", type: null, autofocus: 1, index: 0, size: 8, margin: 1},
@@ -172,6 +186,17 @@ export const inputFields = [
 {id:424, name: "p_steuerabzug2", xLocationId: 36, yLocationId: 51, formPage: 47, tooltip: "...", defaultValue: null, placeholder: "Amount in \u20ac", type: null, autofocus: null, index: 1, size: 8, margin: 1},
 {id:425, name: "sonstig", xLocationId: 37, yLocationId: 87, formPage: 48, tooltip: "...", defaultValue: null, placeholder: "Description", type: null, autofocus: 1, index: 0, size: 12, margin: 1},   
 {id:426, name: "sonstig_x", xLocationId: 45, yLocationId: 87, formPage: null, tooltip: null, defaultValue: "x", placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
+{id:427, name: "old_business_yes", xLocationId: 45, yLocationId: 87,defaultValue:"x"},
+{id:428, name: "old_business_no", xLocationId: 1, yLocationId: 87,defaultValue:"x"},
+{id:429, name: "old_business_name", xLocationId: 45, yLocationId: 87,defaultValue:""},
+{id:430, name: "old_business_city", xLocationId: 38, yLocationId: 87,defaultValue:""},
+{id:431, name: "old_business_start_date", xLocationId: 38, yLocationId: 87,defaultValue:""},
+{id:432, name: "old_business_end_date", xLocationId: 21, yLocationId: 87,defaultValue:""},
+{id:433, name: "old_business_finanzamt", xLocationId: 38, yLocationId: 87,defaultValue:""},
+{id:434, name: "old_business_tax_id", xLocationId: 11, yLocationId: 87,defaultValue:""},
+{id:435, name: "old_business_ustid", xLocationId: 38, yLocationId: 87,defaultValue:""},
+
+
 
 {id:501, name: "sum1", xLocationId: 38, yLocationId: 88, formPage: 43, tooltip: "...", defaultValue: null, placeholder: "Amount in \u20ac", type: null, autofocus: 1, index: 0, size: 8, margin: 1},  
 {id:502, name: "sum2", xLocationId: 39, yLocationId: 88, formPage: 43, tooltip: "...", defaultValue: null, placeholder: "Amount in \u20ac", type: null, autofocus: null, index: 1, size: 8, margin: 1},

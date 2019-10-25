@@ -3,13 +3,9 @@ const y = [{name:"bac", value:"123"}];
 
 let h = []
 
-for(let i=0; i<x.length;i++){
-    const foundEntry = y.find(function(entry){
-        return entry.name === x[i]
-    })
-    if(foundEntry !== undefined){
-        h.push(foundEntry)
-    }
+for(let i=0; i<y.length;i++){
+    if(x.includes(y[i].name))
+    console.log("x")
 };
 
 console.log(h)

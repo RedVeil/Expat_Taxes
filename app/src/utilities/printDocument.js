@@ -11,9 +11,10 @@ import {xLocations} from "../databases/xLocations";
 import {yLocations} from "../databases/yLocations";
 import { inputFields } from "../databases/inputFields";
 import {sepaMandateXY} from "../databases/sepaMandateXY";
-import {documentMandateXY} from "../databases/documentMandateXY";
+import {documentMandateXYEng, documentMandateXYGer, documentMandateXYEng2, documentMandateXYGer2} from "../databases/documentMandateXY";
 import { sepaMandate } from "../databases/sepaMandate";
-
+import {documentMandateEng} from "../databases/documentMandateEng";
+import {documentMandateGer} from "../databases/documentMandateGer";
 
 const pageArray = [pageOne,pageTwo,pageThree,pageFour,pageFive,pageSix,pageSeven,pageEight]
 
@@ -26,20 +27,22 @@ function generateSepaMandate(infos, pdf){
   return pdf
 };
 
-function generateDocumentMandate(infos, pdf){
-  /*pdf.addPage()
-  pdf.addImage(documentRecipientMandateGer, "JPG",0,0, 590, 840,"docGer","FAST")
-  infos.map(info =>{
-    return pdf.text(info.value, info.x,info.y)
-  })
+function generateDocumentMandateEng(infos, pdf){
   pdf.addPage()
-  pdf.addImage(documentRecipientMandateEng, "JPG",0,0, 590, 840,"docEng","FAST")
+  pdf.addImage(documentMandateEng, "JPG",0,0, 590, 840,"docEng","FAST")
   infos.map(info =>{
     return pdf.text(info.value, info.x,info.y)
   })
-  return pdf*/
+  return pdf
 };
-
+function generateDocumentMandateGer(infos, pdf){
+  pdf.addPage()
+  pdf.addImage(documentMandateGer, "JPG",0,0, 590, 840,"docGer","FAST")
+  infos.map(info =>{
+    return pdf.text(info.value, info.x,info.y)
+  })
+  return pdf
+};
 function createFirstPage(inputsPageOne){
   var pdf = new jsPDF('p', 'pt', 'a4');
   pdf.setFontSize(12);
@@ -76,10 +79,16 @@ function addXYCoordinates(inputs){
   inputs.map(addYLocation)
 };
 
-function addXYtoInfos(inputs, xyArray){
+function addXYtoInfos(inputs, xyArray, xyArray2){
+  const doubleUse = ["u_firstname","u_lastname","doc_firstname","doc_lastname"]
   const inputsWithLocations = inputs.map(input =>{
     return {name:input.name, value:input.value, x:xyArray[input.name].x,y:xyArray[input.name].y}
   });
+  for(let i=0; i<inputs.length; i++){
+    if (doubleUse.includes(inputs[i].name)){
+      inputsWithLocations.push({name:inputs[i].name, value:inputs[i].value, x:xyArray2[inputs[i].name].x,y:xyArray2[inputs[i].name].y}) 
+    }
+  };
   return inputsWithLocations;
 };
 
@@ -155,18 +164,18 @@ export function printDocument(inputs){
   
   if(inputs["vollmacht_x"]=== "x"){
     console.log("vollmacht")
-    /*
     const documentRelevantKeys = ["u_firstname","u_lastname","u_strasse","u_hausnummer","u_postleitzahl","u_city", 
-    "doc_firstname", "doc_lastname", "doc_strasse", "doc_hausnmmer", "doc_postleitzahl","doc_city"]
+    "doc_firstname", "doc_lastname", "doc_strasse", "doc_hausnummer", "doc_postleitzahl","doc_city"]
     const documentRecipientInfos = [];
     for(let i=0; i<documentRelevantKeys.length;i++){
       if (inputs[documentRelevantKeys[i]]){
         documentRecipientInfos.push({name:documentRelevantKeys[i],value:inputs[documentRelevantKeys[i]]});
       };
     };
-    const documentInfosWithLocations = addXYtoInfos(documentRecipientInfos, documentMandateXY)
-    pdf = generateDocumentMandate(documentInfosWithLocations)
-    */
+    const documentInfosWithLocationsGer = addXYtoInfos(documentRecipientInfos, documentMandateXYGer, documentMandateXYGer2)
+    pdf = generateDocumentMandateGer(documentInfosWithLocationsGer, pdf)
+    const documentInfosWithLocationsEng = addXYtoInfos(documentRecipientInfos, documentMandateXYEng, documentMandateXYEng2)
+    pdf = generateDocumentMandateEng(documentInfosWithLocationsEng, pdf)
   };
 
   pdf.save("Steuerliche Anmeldung.pdf");
