@@ -162,8 +162,9 @@ export const steuerlicheErfassungFormData = [
 {title: "Exptected Income", display:"block", inputFields:[
   [{type:"text", text:"First Year"}],
   [{name: "u_betrag1", tooltip: <p className="tooltipText">Enter your expected income through self-employment for the first year of your business. 
-  <br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end. 
-  </p>, top: 5, defaultValue: null, placeholder: "Selfemployment Income", type: null, size: "medium", margin: "medium"},
+  <br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end. <br/><br/>
+  <b>Important</b><br/>You can enter your self-employment income here only if your job is in this <a href="" target="_blank" rel="noopener noreferrer">list.</a> Otherwise you enter it in Business Revenue.</p>, 
+  top: 5, defaultValue: null, placeholder: "Selfemployment Income", type: null, size: "medium", margin: "medium"},
   {name: "u_betrag2", tooltip: <p className="tooltipText">Enter your expected income through employment for the first year of your business. 
   <br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end.</p>,
    top: 5, defaultValue: null, placeholder: "Salary", type: null, size: "medium", margin: "medium"},
@@ -178,16 +179,26 @@ export const steuerlicheErfassungFormData = [
    top: 5, defaultValue: null, placeholder: "Other Income", type: null, size: "medium", margin: "medium"},
   {name: "u_sonderausgaben1",tooltip: <p className="tooltipText">Enter the sum of your estimated special expenses. Those could be insurance, professional liability etc.
   <br/>For a more comprehensive list click here: <a href="" target="_blank" rel="noopener noreferrer">german</a>
-  <a href="" target="_blank" rel="noopener noreferrer">english</a><br/></p>, top: 11.5, defaultValue: null, placeholder: "Special Expenses", type: null, size: "medium", margin: "medium"},
+  <a href="" target="_blank" rel="noopener noreferrer">english</a></p>, top: 11.5, defaultValue: null, placeholder: "Special Expenses", type: null, size: "medium", margin: "medium"},
   {name: "u_steuerabzug1", tooltip: <p className="tooltipText">Enter the sum of your estimated special expenses.</p>, top: 11.5, defaultValue: null, placeholder: "Tax Deductions", type: null, size: "medium", margin: "medium"},
   {name: "sum1", tooltip: <p className="tooltipText">...</p>, top: 16, defaultValue: null, placeholder: "Total Revenue", type: null, size: "medium", margin: "medium"},],
   [{type:"text", text:"Second Year"}],
-  [{name: "u_betrag6", tooltip: <p className="tooltipText"></p>, top: 23, defaultValue: null, placeholder: "Selfemployment Income", type: null, size: "medium", margin: "medium"},
-  {name: "u_betrag7", tooltip: <p className="tooltipText">...</p>, top: 23, defaultValue: null, placeholder: "Salary", type: null, size: "medium", margin: "medium"},
-  {name: "u_betrag8", tooltip: <p className="tooltipText">...</p>, top: 23, defaultValue: null, placeholder: "Capital Gains", type: null, size: "medium", margin: "medium"},
-  {name: "u_betrag9", tooltip: <p className="tooltipText">...</p>, top: 23, defaultValue: null, placeholder: "Other Income", type: null, size: "medium", margin: "medium"},
-  {name: "u_betrag10", tooltip: <p className="tooltipText">...</p>, top: 23, defaultValue: null, placeholder: "Other Income", type: null, size: "medium", margin: "medium"},],
-  [{name: "u_sonderausgaben2", tooltip: <p className="tooltipText">...</p>, top: 27, defaultValue: null, placeholder: "Special Expenses", type: null, size: "medium", margin: "medium"},
+  [{name: "u_betrag6", tooltip: <p className="tooltipText">Enter your expected income through self-employment for the second year of your business. 
+  <br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end. <br/><br/>
+  <b>Important</b><br/>You can enter your self-employment income here only if your job is in this <a href="" target="_blank" rel="noopener noreferrer">list.</a> Otherwise you enter it in Business Revenue.</p>, top: 23, defaultValue: null, placeholder: "Selfemployment Income", type: null, size: "medium", margin: "medium"},
+  {name: "u_betrag7", tooltip: <p className="tooltipText">Enter your expected income through employment for the second year of your business. 
+  <br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end.</p>, top: 23, defaultValue: null, placeholder: "Salary", type: null, size: "medium", margin: "medium"},
+  {name: "u_betrag8", tooltip: <p className="tooltipText">Enter your expected income through investments for the second year of your business. 
+  <br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end.</p>, top: 23, defaultValue: null, placeholder: "Capital Gains", type: null, size: "medium", margin: "medium"},
+  {name: "u_betrag10", tooltip: <p className="tooltipText">Enter the estimated revenue of your business for the second year. 
+  <br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end.</p>,
+  top: 23, defaultValue: null, placeholder: "Business Revenue", type: null, size: "medium", margin: "medium"},],
+  [{name: "u_betrag9", tooltip: <p className="tooltipText">Enter your expected income through other sources for the second year of your business. 
+  <br/><br/>This could be child benefits, BaföG, scholarships or grants etc.<br/>All of these numbers should estimates.<br/><br/>There is no direct consquence if these numbers dont hold up to reality. As a rule of thumb keep it at the lower reasonable end.
+  </p>, top: 23, defaultValue: null, placeholder: "Other Income", type: null, size: "medium", margin: "medium"},
+  {name: "u_sonderausgaben2", tooltip: <p className="tooltipText">Enter the sum of your estimated special expenses. Those could be insurance, professional liability etc.
+  <br/>For a more comprehensive list click here: <a href="" target="_blank" rel="noopener noreferrer">german</a>
+  <a href="" target="_blank" rel="noopener noreferrer">english</a></p>, top: 27, defaultValue: null, placeholder: "Special Expenses", type: null, size: "medium", margin: "medium"},
   {name: "u_steuerabzug2", tooltip: <p className="tooltipText">...</p>, top: 27, defaultValue: null, placeholder: "Tax Deductions", type: null, size: "medium", margin: "medium"},],
   [{name: "sum2", tooltip: <p className="tooltipText">...</p>, top: 31.5, defaultValue: null, placeholder: "Total Revenue", type: null, size: "medium", margin: "medium"},],
 ]},

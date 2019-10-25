@@ -10,10 +10,10 @@ import {pageEight} from "../databases/pageEight";
 import {xLocations} from "../databases/xLocations";
 import {yLocations} from "../databases/yLocations";
 import { inputFields } from "../databases/inputFields";
-import { findInfos } from "./findInfos";
 import {sepaMandateXY} from "../databases/sepaMandateXY";
 import {documentMandateXY} from "../databases/documentMandateXY";
 import { sepaMandate } from "../databases/sepaMandate";
+
 
 const pageArray = [pageOne,pageTwo,pageThree,pageFour,pageFive,pageSix,pageSeven,pageEight]
 
@@ -27,11 +27,17 @@ function generateSepaMandate(infos, pdf){
 };
 
 function generateDocumentMandate(infos, pdf){
-  pdf.addPage()
+  /*pdf.addPage()
+  pdf.addImage(documentRecipientMandateGer, "JPG",0,0, 590, 840,"docGer","FAST")
   infos.map(info =>{
     return pdf.text(info.value, info.x,info.y)
   })
-  return pdf
+  pdf.addPage()
+  pdf.addImage(documentRecipientMandateEng, "JPG",0,0, 590, 840,"docEng","FAST")
+  infos.map(info =>{
+    return pdf.text(info.value, info.x,info.y)
+  })
+  return pdf*/
 };
 
 function createFirstPage(inputsPageOne){
@@ -142,7 +148,6 @@ export function printDocument(inputs){
         sepaInfos.push({name:sepaRelevantKeys[i],value:inputs[sepaRelevantKeys[i]]});
       };
     };
-
     const sepaInfosWithLocations = addXYtoInfos(sepaInfos, sepaMandateXY)
     sepaInfosWithLocations.push({name:"country", value:"Deutschland",x:70,y:480})
     pdf = generateSepaMandate(sepaInfosWithLocations, pdf);
@@ -151,8 +156,14 @@ export function printDocument(inputs){
   if(inputs["vollmacht_x"]=== "x"){
     console.log("vollmacht")
     /*
-    const documentRelevantKeys = [""]
-    const documentRecipientInfos = findInfos(inputs, documentRelevantKeys);
+    const documentRelevantKeys = ["u_firstname","u_lastname","u_strasse","u_hausnummer","u_postleitzahl","u_city", 
+    "doc_firstname", "doc_lastname", "doc_strasse", "doc_hausnmmer", "doc_postleitzahl","doc_city"]
+    const documentRecipientInfos = [];
+    for(let i=0; i<documentRelevantKeys.length;i++){
+      if (inputs[documentRelevantKeys[i]]){
+        documentRecipientInfos.push({name:documentRelevantKeys[i],value:inputs[documentRelevantKeys[i]]});
+      };
+    };
     const documentInfosWithLocations = addXYtoInfos(documentRecipientInfos, documentMandateXY)
     pdf = generateDocumentMandate(documentInfosWithLocations)
     */
