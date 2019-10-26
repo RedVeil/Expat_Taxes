@@ -343,7 +343,7 @@ export const steuerlicheErfassungFormData = [
 
   {
     title: "Previous Business", display: "block", inputFields: [
-      [{ name: "old_business", text: "Did you have a Business in Germany in the last 5 years?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["Yes", "No"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
+      [{ name: "old_business", text: "Did you have a Business in Germany in the last 5 years?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
       { name: "old_business_yes", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
       { name: "old_business_no", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },],
       ["invisible",
@@ -360,27 +360,27 @@ export const steuerlicheErfassungFormData = [
 
   {
     title: "Handelsregister", display: "block", inputFields: [
-      [{ name: "handelsregister", text: "Are you registered?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["Yes", "No"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
+      [{ name: "handelsregister", text: "Is your Business registered at the Handelsregister?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
       { name: "handelsregister_yes", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
       { name: "handelsregister_no", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },],
       ["invisible",
-        { name: "handelsregister_date", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", type: null, size: "medium", margin: "medium" },
-        { name: "handelsregister_city", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", type: null, size: "medium", margin: "medium" },
-        { name: "registry_number", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", type: null, size: "medium", margin: "medium" },],
+        { name: "handelsregister_date", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "",  placeholder: "Date",type: null, size: "medium", margin: "medium" },
+        { name: "handelsregister_city", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "",  placeholder: "City",type: null, size: "medium", margin: "medium" },
+        { name: "registry_number", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "",  placeholder: "Registry Number",type: null, size: "medium", margin: "medium" },],
       ["invisible",
-      { name: "handelsregister_in_process", text: "Are you in the process?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["Yes", "No"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
-      { name: "registration_intended", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
-      { name: "registration_done", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null }],
+      { name: "handelsregister_application_done", text: "Did you submit your application?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "Not Yet"], type: "radio", size: "medium", margin: "medium" },
+      { name: "application_intended", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
+      { name: "application_done", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null }],
       ["invisible",
-        { name: "registration_done_date", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", type: null, size: "medium", margin: "medium" },
-        { name: "handelsregister_city", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", type: null, size: "medium", margin: "medium" },
-        { name: "registry_number", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", type: null, size: "medium", margin: "medium" }],
+        { name: "registration_done_date", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", placeholder: "Date", type: null, size: "medium", margin: "medium" },
+        { name: "handelsregister_city", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", placeholder: "City", type: null, size: "medium", margin: "medium" },
+        { name: "registry_number", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", placeholder: "Registry Number",type: null, size: "medium", margin: "medium" }],
     ]
   },
 
   {
-    title: "Small Business Rule", display: "block", inputFields: [
-      [{ name: "small_business", text: "Do you want to use the Kleinunternehmer-Regelung?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["Yes", "No"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
+    title: "Kleinunternehmer-Regelung", display: "block", inputFields: [
+      [{ name: "small_business", text: "Do you want to use the Kleinunternehmer-Regelung?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
       { name: "small_business_yes", tooltip: <p className="tooltipText">null</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
       { name: "small_business_no", tooltip: <p className="tooltipText">null</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },],
     ]

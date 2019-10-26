@@ -189,11 +189,60 @@ export default class SteuerlicheErfassungForm extends React.Component {
       };
     };
 
-    if (this.state.userInput["sonstig"] !== null) {
-      this.saveValue("sonstig_x", "x")
+    if(this.state.userInput["old_business"] === "yes"){
+      this.showContainer("Previous Business-row-1");
+      this.showContainer("Previous Business-row-2");
+      this.eraseValue("old_business_no");
+      this.saveValue("old_business_yes");
     };
 
-    if (this.state.userInput["work_date"] !== null) {
+    if(this.state.userInput["old_business"] === "no"){
+      this.hideContainer("Previous Business-row-1");
+      this.hideContainer("Previous Business-row-2");
+      const erasePreviousBusiness = ["old_business_yes", "old_business_name","old_business_city",
+      "old_business_start_date","old_business_end_date","old_business_finanzamt","old_business_tax_id","old_business_ustid"];
+      for (let i=0; i<erasePreviousBusiness.length;i++){
+        this.eraseValue(erasePreviousBusiness[i])
+      };
+      this.saveValue("old_business_no");
+    };
+
+    if(this.state.userInput["handelsregister"] === "yes"){
+      this.hideContainer("Handelsregister-row-2");
+      this.hideContainer("Handelsregister-row-3");
+      this.showContainer("Handelsregister-row-1");
+      this.saveValue("handelsregister_yes", "x")
+      this.eraseValue("handelsregister_no");
+    };
+
+    if(this.state.userInput["handelsregister"] === "no"){
+      this.hideContainer("Handelsregister-row-1");
+      this.showContainer("Handelsregister-row-2");
+      this.saveValue("handelsregister_no", "x");
+      const eraseHandelsregister = ["handelsregister_yes", "handelsregister_date","handelsregister_city","registry_number"]
+      for (let i=0; i<eraseHandelsregister.length;i++){
+        this.eraseValue(eraseHandelsregister[i])
+      };
+    };
+
+    if(this.state.userInput["handelsregister_application_done"] === "yes"){
+      this.showContainer("Handelsregister-row-3");
+      this.eraseValue("application_intended");
+      this.saveValue("application_done", "x");
+    };
+
+    if(this.state.userInput["handelsregister_application_done"] === "no"){
+      this.hideContainer("Handelsregister-row-3");
+      const eraseApplication = ["application_done", "registration_done_date","handelsregister_city","registry_number"]
+      for (let i=0; i<eraseApplication .length;i++){
+        this.eraseValue(eraseApplication [i])
+      };
+      this.saveValue("application_intended", "x");
+    };
+
+
+
+    if (this.state.userInput["work_date"] !== undefined) {
       this.saveValue("neugründungsdate", this.state.userInput["work_date"])
     };
 
