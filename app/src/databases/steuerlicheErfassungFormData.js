@@ -380,7 +380,10 @@ export const steuerlicheErfassungFormData = [
 
   {
     title: "Kleinunternehmer-Regelung", display: "block", inputFields: [
-      [{ name: "small_business", text: "Do you want to use the Kleinunternehmer-Regelung?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
+      [{ name: "small_business", text: "Do you want to use the Kleinunternehmer-Regelung?", tooltip: 
+      <p className="tooltipText">If your total revenue (Umsatz) is lower than 19.000€ you may decide to use the Kleinunternehmer-Regel (Small Business Rule).
+      This means you dont have to pay any sales tax (Umsatzsteuer). <br/><b>In this case you can obviously not add sales tax to your receivables.</b><br/><br/>
+      If you click "No" you simply pay sales tax and add it to your receivables.</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
       { name: "small_business_yes", tooltip: <p className="tooltipText">null</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
       { name: "small_business_no", tooltip: <p className="tooltipText">null</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },],
     ]
