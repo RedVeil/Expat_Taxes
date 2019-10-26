@@ -343,38 +343,39 @@ export const steuerlicheErfassungFormData = [
 
   {
     title: "Previous Business", display: "block", inputFields: [
-      [{ name: "old_business", text: "Did you have a Business in Germany in the last 5 years?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
-      { name: "old_business_yes", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
-      { name: "old_business_no", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },],
+      [{ name: "old_business", text: "Did you have a business in Germany in the last 5 years?", tooltip: <p className="tooltipText">Have you had a business or/and worked self-employed in germany during the past five years?</p>, top: 0, defaultValue: ["yes", "no"], 
+      placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
+      { name: "old_business_yes", tooltip: <p className="tooltipText"></p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
+      { name: "old_business_no", tooltip: <p className="tooltipText"></p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },],
       ["invisible",
-        { name: "old_business_name", tooltip: <p className="tooltipText">...</p>, top: 3.5, defaultValue: "", placeholder: "Old Business", type: null, size: "medium", margin: "medium" },
-        { name: "old_business_city", tooltip: <p className="tooltipText">...</p>, top: 3.5, defaultValue: "", placeholder: "City", type: null, size: "medium", margin: "medium" },
-        { name: "old_business_start_date", tooltip: <p className="tooltipText">...</p>, top: 3.5, defaultValue: "", placeholder: "Start Date", type: null, size: "medium", margin: "medium" },
-        { name: "old_business_end_date", tooltip: <p className="tooltipText">...</p>, top: 3.5, defaultValue: "", placeholder: "End Date", type: null, size: "medium", margin: "medium" },],
+        { name: "old_business_name", tooltip: <p className="tooltipText">W</p>, top: 3.5, defaultValue: "", placeholder: "Old Business", type: null, size: "medium", margin: "medium" },
+        { name: "old_business_city", tooltip: <p className="tooltipText">Where did you worked/ Where was your business?</p>, top: 3.5, defaultValue: "", placeholder: "City", type: null, size: "medium", margin: "medium" },
+        { name: "old_business_start_date", tooltip: <p className="tooltipText">When did you start it?<br/>Enter the date in the following format: DD/MM/YYYY</p>, top: 3.5, defaultValue: "", placeholder: "Start Date", type: null, size: "medium", margin: "medium" },
+        { name: "old_business_end_date", tooltip: <p className="tooltipText">When did it end?<br/>Enter the date in the following format: DD/MM/YYYY</p>, top: 3.5, defaultValue: "", placeholder: "End Date", type: null, size: "medium", margin: "medium" },],
       ["invisible",
-        { name: "old_business_finanzamt", tooltip: <p className="tooltipText">...</p>, top: 9, defaultValue: "", placeholder: "Finanzamt", type: null, size: "medium", margin: "medium" },
-        { name: "old_business_tax_id", tooltip: <p className="tooltipText">...</p>, top: 9, defaultValue: "", placeholder: "Tax Id", type: null, size: "medium", margin: "medium" },
-        { name: "old_business_ustid", tooltip: <p className="tooltipText">...</p>, top: 9, defaultValue: "", placeholder: "Ustid", type: null, size: "large", margin: "medium" },]
+        { name: "old_business_finanzamt", tooltip: <p className="tooltipText">At which tax office where you registered?</p>, top: 9, defaultValue: "", placeholder: "Finanzamt", type: null, size: "medium", margin: "medium" },
+        { name: "old_business_tax_id", tooltip: <p className="tooltipText">What was your old tax id?</p>, top: 9, defaultValue: "", placeholder: "Tax Id", type: null, size: "medium", margin: "medium" },
+        { name: "old_business_ustid", tooltip: <p className="tooltipText">What was your old sales tax id? (Umsatzsteuer-Identifikationsnummer)</p>, top: 9, defaultValue: "", placeholder: "Ustid", type: null, size: "large", margin: "medium" },]
     ]
   },
 
   {
     title: "Handelsregister", display: "block", inputFields: [
-      [{ name: "handelsregister", text: "Is your Business registered at the Handelsregister?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
+      [{ name: "handelsregister", text: "Is your business registered at the Handelsregister?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "No"], type: "radio", size: "medium", margin: "medium" },
       { name: "handelsregister_yes", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
       { name: "handelsregister_no", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },],
       ["invisible",
-        { name: "handelsregister_date", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "",  placeholder: "Date",type: null, size: "medium", margin: "medium" },
-        { name: "handelsregister_city", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "",  placeholder: "City",type: null, size: "medium", margin: "medium" },
-        { name: "registry_number", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "",  placeholder: "Registry Number",type: null, size: "medium", margin: "medium" },],
+        { name: "handelsregister_date", tooltip: <p className="tooltipText">Since when is your business registered</p>, top: 0, defaultValue: "",  placeholder: "Date",type: null, size: "medium", margin: "medium" },
+        { name: "handelsregister_city", tooltip: <p className="tooltipText">In which city is your business registered?</p>, top: 0, defaultValue: "",  placeholder: "City",type: null, size: "medium", margin: "medium" },
+        { name: "registry_number", tooltip: <p className="tooltipText">What is your registry number?</p>, top: 0, defaultValue: "",  placeholder: "Registry Number",type: null, size: "medium", margin: "medium" },],
       ["invisible",
-      { name: "handelsregister_application_done", text: "Did you submit your application?", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "Not Yet"], type: "radio", size: "medium", margin: "medium" },
+      { name: "handelsregister_application_done", text: "Did you submit your application?", tooltip: <p className="tooltipText">Did you submit your application already to a local court?</p>, top: 0, defaultValue: ["yes", "no"], placeholder: ["Yes", "Not Yet"], type: "radio", size: "medium", margin: "medium" },
       { name: "application_intended", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null },
       { name: "application_done", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "x", placeholder: null, type: null, size: null, margin: null }],
       ["invisible",
-        { name: "registration_done_date", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", placeholder: "Date", type: null, size: "medium", margin: "medium" },
-        { name: "handelsregister_city", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", placeholder: "City", type: null, size: "medium", margin: "medium" },
-        { name: "registry_number", tooltip: <p className="tooltipText">...</p>, top: 0, defaultValue: "", placeholder: "Registry Number",type: null, size: "medium", margin: "medium" }],
+        { name: "registration_done_date", tooltip: <p className="tooltipText">When did you submit your application?<br/>Enter the date in the following format: DD/MM/YYYY</p>, top: 0, defaultValue: "", placeholder: "Date", type: null, size: "medium", margin: "medium" },
+        { name: "handelsregister_city", tooltip: <p className="tooltipText">In which city is did you submit it?</p>, top: 0, defaultValue: "", placeholder: "City", type: null, size: "medium", margin: "medium" },
+        { name: "registry_number", tooltip: <p className="tooltipText">What is your registry number?</p>, top: 0, defaultValue: "", placeholder: "Registry Number",type: null, size: "medium", margin: "medium" }],
     ]
   },
 
