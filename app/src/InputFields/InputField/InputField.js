@@ -1,7 +1,7 @@
 import React from 'react';
 import './InputField.css';
 
-export default function createInputField(inputField, onFocusFunction, onChangeFunction){
+export default function InputField(inputField, onFocusFunction, onChangeFunction){
   const widthStyle = {
     small:{
       background:"5.3em",

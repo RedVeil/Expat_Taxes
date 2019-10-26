@@ -111,6 +111,8 @@ export const inputFields = [
 {id:246, name: "old_tax_yes", xLocationId: 19, yLocationId: 101, formPage: null, tooltip: null, defaultValue: "x", placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
 {id:247, name: "old_tax_no", xLocationId: 1, yLocationId: 101, formPage: null, tooltip: null, defaultValue: "x", placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
 
+
+
 {id:301, name: "work_date", xLocationId: 23, yLocationId: 63, formPage: 38, tooltip: "You can backdate this by up to 3 months to include preparation costs.<br/><br/>Enter the date in the following format: DD/MM/YYYY", defaultValue: null, placeholder: "Work Date", type: null, autofocus: 1, index: 0, size: 8, margin: 1},
 {id:302, name: "work_bezeichnung1", xLocationId: 5, yLocationId: 64, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
 {id:303, name: "work_strasse1", xLocationId: 5, yLocationId: 65, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
@@ -145,14 +147,16 @@ export const inputFields = [
 {id:332, name: "new_tax_id", xLocationId: 22, yLocationId: 80, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
 {id:333, name: "new_steuernummer", xLocationId: 33, yLocationId: 80, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
 {id:334, name: "new_ustid", xLocationId: 29, yLocationId: 81, formPage: null, tooltip: null, defaultValue: null, placeholder: null, type: null, autofocus: null, index: null, size: null, margin: null},
-{id:335, name: "handelsregister_yes", xLocationId: 15, yLocationId: 81,defaultValue: "x",},
-{id:336, name: "handelsregister_no", xLocationId: 13, yLocationId: 81,defaultValue: "x",},
-{id:337, name: "application_intended", xLocationId: 12, yLocationId: 81,defaultValue: "x",},
-{id:338, name: "application_done", xLocationId: 12, yLocationId: 81,defaultValue: "x",},
-{id:339, name: "registration_done_date", xLocationId: 17, yLocationId: 81,defaultValue: "",},
-{id:340, name: "handelsregister_date", xLocationId: 17, yLocationId: 81,defaultValue: "",},
-{id:341, name: "handelsregister_city", xLocationId: 15, yLocationId: 81,defaultValue: "",},
-{id:342, name: "registry_number", xLocationId: 15, yLocationId: 81,defaultValue: "",},
+{id:335, name: "handelsregister_yes", xLocationId: 15, yLocationId:25,defaultValue: "x",},
+{id:336, name: "handelsregister_no", xLocationId: 13, yLocationId: 53,defaultValue: "x",},
+{id:337, name: "application_intended", xLocationId: 12, yLocationId: 54,defaultValue: "x",},
+{id:338, name: "application_done", xLocationId: 12, yLocationId: 85,defaultValue: "x",},
+{id:339, name: "registration_done_date", xLocationId: 17, yLocationId: 49,defaultValue: "",},
+{id:340, name: "handelsregister_date", xLocationId: 17, yLocationId: 25,defaultValue: "",},
+{id:341, name: "handelsregister_city1", xLocationId: 15, yLocationId: 52,defaultValue: "",},
+{id:342, name: "registry_number1", xLocationId: 15, yLocationId: 57,defaultValue: "",},
+{id:343, name: "handelsregister_city2", xLocationId: 15, yLocationId: 52,defaultValue: "",},
+{id:344, name: "registry_number2", xLocationId: 15, yLocationId: 57,defaultValue: "",},
 
 
 

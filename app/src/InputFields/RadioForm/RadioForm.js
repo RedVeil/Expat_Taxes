@@ -1,7 +1,7 @@
 import React from 'react';
 import './RadioForm.css'
 
-export default function createRadioForm(radioForm, onFocusFunction,handleRadioForms) {
+export default function RadioForm(radioForm, onFocusFunction,handleRadioForms) {
   let newRadioForm = []
   for (var i = 0; i < radioForm.placeholder.length; i++){
     newRadioForm.push(

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function createTooltips(inputTooltips){
+export default function Tooltips(inputTooltips){
   const tooltips = inputTooltips.map(function(tooltip){
       return (
       <div 
