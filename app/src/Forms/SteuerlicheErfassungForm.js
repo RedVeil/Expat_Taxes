@@ -149,7 +149,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
       this.eraseValue("vollmacht_attached");
     };
 
-    if (this.state.userInput["doc_firstname"] !== null) {
+    if (this.state.userInput["doc_firstname"] !== undefined) {
       this.saveValue("vollmacht_x", "x")
       this.saveValue("vollmacht_attached", "x")
     };
@@ -212,7 +212,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
       this.showContainer("Previous Business-row-1");
       this.showContainer("Previous Business-row-2");
       this.eraseValue("old_business_no");
-      this.saveValue("old_business_yes");
+      this.saveValue("old_business_yes","x");
     };
 
     if(this.state.userInput["old_business"] === "no"){
@@ -223,7 +223,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
       for (let i=0; i<erasePreviousBusiness.length;i++){
         this.eraseValue(erasePreviousBusiness[i])
       };
-      this.saveValue("old_business_no");
+      this.saveValue("old_business_no","x");
     };
 
     if(this.state.userInput["handelsregister"] === "yes"){
@@ -266,23 +266,23 @@ export default class SteuerlicheErfassungForm extends React.Component {
     };
 
     if (this.state.userInput["small_business"] === "yes") {
-      this.eraseValue("small_busines_no");
-      this.saveValue("small_busines_yes", "x");
+      this.eraseValue("small_business_no");
+      this.saveValue("small_business_yes", "x");
     };
     if (this.state.userInput["small_business"] === "no") {
-      this.eraseValue("small_busines_yes");
-      this.saveValue("small_busines_no", "x");
+      this.eraseValue("small_business_yes");
+      this.saveValue("small_business_no", "x");
     };
 
-    if (this.state.userInput["steuerbefreiung"] !== null) {
+    if (this.state.userInput["steuerbefreiung"] !== undefined) {
       this.saveValue("steuerbefreiung_yes", "x")
     };
 
-    if (this.state.userInput["steuersatz"] !== null) {
+    if (this.state.userInput["steuersatz"] !== undefined) {
       this.saveValue("steuersatz_yes", "x")
     };
 
-    if (this.state.userInput["pre_ustid"] !== null) {
+    if (this.state.userInput["pre_ustid"] !== undefined) {
       this.saveValue("pre_ustid_yes", "x")
     };
   };

@@ -13,6 +13,7 @@
 
 .button:hover{
   background-color: #E2E2E2;
+  cursor: pointer;
 }
 
 .button:focus{
