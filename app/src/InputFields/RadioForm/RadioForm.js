@@ -6,7 +6,7 @@ export default function RadioForm(radioForm, onFocusFunction,handleRadioForms) {
   for (var i = 0; i < radioForm.placeholder.length; i++){
     newRadioForm.push(
       <div className="radioButtonContainer">
-        <label className="buttonField" htmlFor={`${radioForm.name}-${i}`} style={{fontSize:"1em", display: "inline-block"}}>{radioForm.placeholder[i]}
+        <label className="buttonField" htmlFor={`${radioForm.name}-${i}`} style={{fontSize: "1.2em", display: "inline-block"}}>{radioForm.placeholder[i]}
           <input type="radio" id={`${radioForm.name}-${i}`} name={radioForm.name} defaultValue={radioForm.defaultValue[i]} onFocus={onFocusFunction} onChange={handleRadioForms}></input>
           <span className="checkmark"></span>
         </label>

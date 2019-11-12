@@ -2,7 +2,7 @@
   display:inline-block;
   width: 100%;
   height:100%;
-  background-color: #E2E2E2;
+  background-color: #cccccc;
   /*border-bottom: 2px solid #CCCCCC;*/
   box-sizing:border-box;
 }
@@ -10,7 +10,7 @@
 .formContainer{
   display:inline-block;
   border-bottom: 2px solid #E2E2E2;
-  border-left: 2px solid #dddddd;
+  /*border-left: 2px solid #dddddd;*/
   width: 100%;
   height:100%;
   box-sizing:border-box;
@@ -18,17 +18,21 @@
 
 h2{
   padding: 0.5em 0 0 1.7em;
+  font-size: 1.8em;
+}
+
+h3{
+  font-size: 1.4em;
 }
 
 .rowTitle{
   display:inline-block;
   margin:0;
-  padding: 1em 0.3em 0 0.5em;
+  font-size: 1.3em;
+  padding: 1em 0.1em 0.1em 0.5em;
 }
 
 .tooltipText{
-  font-family: "Helvetica Neue",sans-serif;
-  font-weight: 500;
   font-size: 1em;
-  color: #555555;
+  color: #fff;
 }

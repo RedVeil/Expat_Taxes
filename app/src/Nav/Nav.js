@@ -5,7 +5,7 @@ import "./Nav.css"
 export default function Nav() {
   return (
     <div className="navigationContainer">
-      <h2 style={{ color: "white"}} id="pageTitle">Tax Helper </h2>
+      <h2 id="pageTitle">Tax Helper </h2>
       <nav>
         <ul>
           <Link to="/">

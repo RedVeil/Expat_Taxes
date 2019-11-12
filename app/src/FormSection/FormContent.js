@@ -15,7 +15,7 @@ function createFormRow(counter, rowCounter, rowInputFields, sectionTitle, showTo
       formRow.push(<h4 className="rowTitle">{rowInputFields[i].text}</h4>)
     }
   };
-  return <div className="row" id={`${sectionTitle}-row-${rowCounter}`} style={{display:displayStyle, padding:"0.2 0 0.2em 0", margin:"0 0 0.5em 0"}}>{formRow}</div>;
+  return <div className="row" id={`${sectionTitle}-row-${rowCounter}`} style={{display:displayStyle, padding:"0", margin:"0 0 0.5em 0"}}>{formRow}</div>;
 };
 
 

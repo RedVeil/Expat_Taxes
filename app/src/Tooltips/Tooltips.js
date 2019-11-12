@@ -1,4 +1,5 @@
 import React from "react";
+import "./Tooltip.css";
 
 export default function Tooltips(inputTooltips){
   const tooltips = inputTooltips.map(function(tooltip){
@@ -10,9 +11,12 @@ export default function Tooltips(inputTooltips){
         style={{
           display:"none", 
           position:"relative",
-          padding:"0 2em 0 2.5em", 
+          margin:"0 1em 0 12em", 
+          padding: "1em",
+          borderRadius: "5px",
           width:"14em", 
-          top:`${tooltip.top}em`}}>
+          top:`${tooltip.top}em`,
+          backgroundColor: "#707070",}}>
         {tooltip.text}
       </div>) 
   })

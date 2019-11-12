@@ -1,11 +1,11 @@
 label{
   display: block;
   position: relative;
-  top:-1.8em;
-  left:0.8em;
+  top:-1.7em;
+  left:1em;
   color: #707070;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.3em;
   transition: all 0.3s ease-out;
   z-index: 1;
   cursor: pointer;
@@ -22,9 +22,9 @@ input{
   color:#404040;
   width: 100%;
   font-weight: bold;
-  font-size: 16px;
-  height:1em;
-  padding: 1.2em 0.4em 0.5em 0.5em;
+  font-size: 1.1em;
+  height:1.5em;
+  padding: 1em 0em 0.4em 0.7em;
   border-radius: 5px;
   z-index:2;
   cursor: pointer;
@@ -40,15 +40,15 @@ input:valid{
 
 input:focus + label, 
 input:valid + label{
-  top: -3.8em;
-  font-size: 0.7em;
+  top: -3.4em;
+  font-size: 0.9em;
   z-index: 2;
 }
 
 .greyBackground{
   display:inline-block;
   background: #EEEEEE;
-  height:3.05em;
+  height:3.5em;
   border-radius: 5px;
   overflow: hidden;
 }

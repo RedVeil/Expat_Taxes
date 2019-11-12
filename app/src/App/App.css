@@ -15,10 +15,9 @@ body{
 .form{
   display: block;
   position: relative;
-  width: 70%;
+  width: 100%;
   background: #fff;
-  margin: 50px auto;
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+  /*box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);*/
 }
 
 .link{
@@ -29,8 +28,8 @@ body{
 /****** Footer Style *********/
 .footer {
   margin-top: 10em;
-  background-color: #112533;
-  color:white;
+  background-color: #fff;
+  color:#707070;
   text-align: center;
   height: 100%;
 }
@@ -39,7 +38,7 @@ body{
   border: none;
   background-color: transparent;/*#993333*/
   text-decoration: none;
-  color: white;
+  color: #707070;
   transition-duration: 0.4s;
 }
 
@@ -50,20 +49,3 @@ body{
 #gdprButton:focus{
   outline: none;
 }
-
-@media(min-width:1060px) and (max-width:1210px){
-  .form{
-    width:80%;
-  }
-}
-@media(min-width:940px) and (max-width:1060px){
-  .form{
-    width:90%;
-  }
-}
-@media(max-width:940px){
-  .form{
-    width:100%;
-  }
-}
-

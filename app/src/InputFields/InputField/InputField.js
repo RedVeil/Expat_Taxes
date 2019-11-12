@@ -4,23 +4,23 @@ import './InputField.css';
 export default function InputField(inputField, onFocusFunction, onChangeFunction){
   const widthStyle = {
     small:{
-      background:"5.3em",
-      inputField: "4.1em",
+      background:"6.7em",
+      inputField: "5.5em",
     },
     medium:{
-      background:"11.2em",
-      inputField:"10em",
+      background:"15em",
+      inputField:"12.7em",
     },
     large:{
-      background:"23.4em",
-      inputField:"22.2em"
+      background:"33.8em",
+      inputField:"32.6em"
     }
   };
 
   const marginStyle = {
-    small:"0.1em",
-    medium:"0.5em",
-    large:"1em",
+    small:"1.25em",
+    medium:"3em",
+    large:"2em",
   };
 
   return (
