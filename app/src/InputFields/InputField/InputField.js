@@ -5,7 +5,7 @@ export default function InputField(inputField, onFocusFunction, onChangeFunction
   const widthStyle = {
     small:{
       background:"6.7em",
-      inputField: "5.5em",
+      inputField: "5.1em",
     },
     medium:{
       background:"15em",
@@ -13,7 +13,7 @@ export default function InputField(inputField, onFocusFunction, onChangeFunction
     },
     large:{
       background:"33.8em",
-      inputField:"32.6em"
+      inputField:"29.8em"
     }
   };
 
@@ -34,7 +34,7 @@ export default function InputField(inputField, onFocusFunction, onChangeFunction
         onChange={onChangeFunction} 
         required
         style={{width:widthStyle[inputField.size].inputField}}/>
-      <label htmlFor={inputField.name} style={{width:widthStyle[inputField.size].inputField}}>{inputField.placeholder}</label>
+      <label htmlFor={inputField.name} className={`${inputField.name}-label`} tyle={{width:widthStyle[inputField.size].inputField}}>{inputField.placeholder}</label>
     </div>
   )
 };
