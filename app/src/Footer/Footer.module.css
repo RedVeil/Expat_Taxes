@@ -1,0 +1,24 @@
+.footer {
+  margin-top: 10em;
+  background-color: #fff;
+  color: #707070;
+  text-align: center;
+  height: 100%;
+}
+
+.gdprButton {
+  border: none;
+  background-color: transparent;
+  /*#993333*/
+  text-decoration: none;
+  color: #707070;
+  transition-duration: 0.4s;
+}
+
+.gdprButton:hover {
+  color: #FF4E50;
+}
+
+.gdprButton:focus {
+  outline: none;
+}

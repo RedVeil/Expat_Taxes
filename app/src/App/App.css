@@ -1,51 +1,8 @@
-/****** General Styles *********/
-body{
-  font-family: 'Roboto', sans-serif;
-  color: #707070;
-  background: #CCCCCC;
+h2 {
+  padding: 0.5em 0 0 1.4em;
+  font-size: 1.8em;
 }
 
-/****** Body Style *******/
-.App{
-  display: grid;
-  width: 100%;
-  height: 100%;
-}
-
-.form{
-  display: block;
-  position: relative;
-  width: 100%;
-  background: #fff;
-  /*box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);*/
-}
-
-.link{
-  color:white;
-}
-
-
-/****** Footer Style *********/
-.footer {
-  margin-top: 10em;
-  background-color: #fff;
-  color:#707070;
-  text-align: center;
-  height: 100%;
-}
-
-#gdprButton{
-  border: none;
-  background-color: transparent;/*#993333*/
-  text-decoration: none;
-  color: #707070;
-  transition-duration: 0.4s;
-}
-
-#gdprButton:hover{
-  color: #FF4E50;
-}
-
-#gdprButton:focus{
-  outline: none;
+h3 {
+  font-size: 1.4em;
 }

@@ -1,0 +1,31 @@
+.arrow{
+    display:inline-block;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.menu{
+    position: sticky;
+    top:0;
+    left: 42em;
+    display: inline-block;
+    z-index:0;
+    background:#f8f8f8;
+}
+
+.menuCard{
+    position: relative;
+    margin-top:20em;
+    left: -3em;
+    border-radius: 5px 0 0 5px;
+    display:inline-block;
+    background: #F8F8F8;
+    padding: 3em 1em;
+    z-index: 1;
+}
+
+.menuText{
+    display:inline-block;
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+}

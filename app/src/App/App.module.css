@@ -1,0 +1,13 @@
+/****** General Styles *********/
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #707070;
+  background: #CCCCCC;
+}
+
+/****** Body Style *******/
+.App{
+  display: grid;
+  width: 100%;
+  height: 100%;
+}

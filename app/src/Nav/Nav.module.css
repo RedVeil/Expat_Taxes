@@ -1,0 +1,31 @@
+/****** Navigation Style *********/
+
+.pageTitle{
+  position: relative;
+  margin: 0 0 0 0em;
+}
+  
+.navigationContainer {
+  display: grid;
+  background-color: #fff;
+  width: 100%;
+  height: 4em;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+  
+.navigationContainer ul {
+  text-align: center;
+  position: relative;
+  margin: auto;
+  top:-2em;
+}
+  
+.navigationContainer li {
+  display: inline-block;
+  color: #707070;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  padding: 1em;
+}
