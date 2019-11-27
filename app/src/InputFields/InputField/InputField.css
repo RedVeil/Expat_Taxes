@@ -43,7 +43,6 @@ input:valid + label{
   top: -3.4em;
   font-size: 0.9em;
   z-index: 2;
-  white-space: nowrap;
 }
 
 .greyBackground{

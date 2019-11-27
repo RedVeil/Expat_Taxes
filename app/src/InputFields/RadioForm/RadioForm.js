@@ -1,7 +1,7 @@
 import React from 'react';
 import './RadioForm.css'
 
-export default function RadioForm(radioForm, onFocusFunction,handleRadioForms) {
+export default function RadioForm(radioForm, onFocusFunction,handleRadioForms,tooltip) {
   let newRadioForm = []
   for (var i = 0; i < radioForm.placeholder.length; i++){
     newRadioForm.push(
@@ -26,6 +26,7 @@ export default function RadioForm(radioForm, onFocusFunction,handleRadioForms) {
         <h3 className="radioText">{radioForm.text}</h3>
         <div className="radioButtons">{newRadioForm}</div>
       </form>
+      {tooltip.text}
     </div>
   )
   };

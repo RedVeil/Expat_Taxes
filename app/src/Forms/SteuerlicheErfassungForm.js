@@ -3,6 +3,7 @@ import { printDocument } from "../utilities/printDocument";
 import { steuerlicheErfassungFormData } from "../databases/steuerlicheErfassungFormData";
 import createFormSection from "../FormSection/FormSection";
 import Button from "../Button/Button";
+import styles from "./Form.module.css";
 
 export default class SteuerlicheErfassungForm extends React.Component {
   constructor(props) {
@@ -22,14 +23,15 @@ export default class SteuerlicheErfassungForm extends React.Component {
   };
 
   showTooltip(event) {
-    if (this.state.currentTooltipId !== null) {
+    /*if (this.state.currentTooltipId !== null) {
       const previousTooltip = document.getElementById(this.state.currentTooltipId);
       previousTooltip.style.display = "none";
     };
     const newTooltipId = `${event.target.name}-tooltip`
     const newTooltip = document.getElementById(newTooltipId);
     newTooltip.style.display = "inline-block";
-    this.setState({ currentTooltipId: newTooltipId })
+    this.setState({ currentTooltipId: newTooltipId })*/
+    console.log(event)
   };
 
   onChangeSaveValue(event) {
@@ -45,8 +47,8 @@ export default class SteuerlicheErfassungForm extends React.Component {
     this.setState({ userInput: updateUserInput });
   };
 
-  eraseValue(name){
-    if(this.state.userInput[name]){
+  eraseValue(name) {
+    if (this.state.userInput[name]) {
       let updateUserInput = this.state.userInput;
       updateUserInput[name] = "";
       this.setState({ userInput: updateUserInput });
@@ -64,7 +66,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
 
   hideContainer(containerId) {
     const showContainer = document.getElementById(containerId);
-    if(showContainer.style.display === "block"){
+    if (showContainer.style.display === "block") {
       showContainer.style.display = "none";
     };
   };
@@ -72,13 +74,13 @@ export default class SteuerlicheErfassungForm extends React.Component {
   handleRadioForms(event) {
     this.onChangeSaveValue(event);
     if (this.state.userInput["married"] === "yes") {
-      for(let i = 1; i < 6; i++){
+      for (let i = 1; i < 6; i++) {
         this.showContainer(`Your Partner-row-${i}`)
       };
       this.showContainer(`Partner Expected Income-section`);
     };
-    if(this.state.userInput["married"] === "no"){
-      for(let i = 1; i < 6; i++){
+    if (this.state.userInput["married"] === "no") {
+      for (let i = 1; i < 6; i++) {
         this.hideContainer(`Your Partner-row-${i}`)
       };
       this.hideContainer(`Partner Expected Income-section`);
@@ -91,7 +93,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
         "p_postleitzahl": "u_postleitzahl", "p_city": "u_city"
       };
       for (var key in partnerAdressOverwrite) {
-        if(this.state.userInput[partnerAdressOverwrite[key]] !== undefined){
+        if (this.state.userInput[partnerAdressOverwrite[key]] !== undefined) {
           this.saveValue(key, this.state.userInput[partnerAdressOverwrite[key]])
         };
       };
@@ -100,9 +102,9 @@ export default class SteuerlicheErfassungForm extends React.Component {
       console.log(this.state.userInput)
       this.showContainer(`Your Partner-row-6`);
       const erasePartnerAdress = [
-        "p_strasse","p_hausnummer", "p_hausnummer_zusatz",
+        "p_strasse", "p_hausnummer", "p_hausnummer_zusatz",
         "p_postleitzahl", "p_city"];
-      for (let i=0; i<erasePartnerAdress.length; i++) {
+      for (let i = 0; i < erasePartnerAdress.length; i++) {
         this.eraseValue(erasePartnerAdress[i])
       };
     };
@@ -117,32 +119,32 @@ export default class SteuerlicheErfassungForm extends React.Component {
     if (this.state.userInput["SEPA"] === "yes") {
       this.saveValue("sepa_x", "x")
     };
-    if (this.state.userInput["SEPA"] === "no"){
+    if (this.state.userInput["SEPA"] === "no") {
       this.eraseValue("sepa_x")
     };
 
     if (this.state.userInput["tax_consultant"] === "no") {
       this.eraseValue("tax_consultant_yes")
       this.saveValue("tax_consultant_no", "x");
-      for(let i = 1;  i< 4; i++){
+      for (let i = 1; i < 4; i++) {
         this.hideContainer(`Tax Consultant-row-${i}`)
       };
     };
     if (this.state.userInput["tax_consultant"] === "yes") {
       this.eraseValue("tax_consultant_no")
       this.saveValue("tax_consultant_yes", "x")
-      for(let i = 1; i < 4; i++){
+      for (let i = 1; i < 4; i++) {
         this.showContainer(`Tax Consultant-row-${i}`)
       };
     };
 
     if (this.state.userInput["doc_recipient"] === "not me") {
-      for(let i = 1; i < 4; i++){
+      for (let i = 1; i < 4; i++) {
         this.showContainer(`Authorized Document Recipient-row-${i}`)
       };
     };
     if (this.state.userInput["doc_recipient"] === "me") {
-      for(let i = 1; i < 4; i++){
+      for (let i = 1; i < 4; i++) {
         this.hideContainer(`Authorized Document Recipient-row-${i}`)
       };
       this.eraseValue("vollmacht_x");
@@ -180,7 +182,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
     };
 
     if (this.state.userInput["dif_firm_address"] === "home") {
-      for(let i = 1; i < 5; i++){
+      for (let i = 1; i < 5; i++) {
         this.hideContainer(`Business Adress-row-${i}`)
       };
       const fullName = `${this.state.userInput["u_firstname"]},${this.state.userInput["u_lastname"]}`;
@@ -195,7 +197,7 @@ export default class SteuerlicheErfassungForm extends React.Component {
       };
     };
     if (this.state.userInput["dif_firm_address"] === "not home") {
-      for(let i = 1; i < 5; i++){
+      for (let i = 1; i < 5; i++) {
         this.showContainer(`Business Adress-row-${i}`)
       };
       const eraseFirmAdress = [
@@ -203,30 +205,30 @@ export default class SteuerlicheErfassungForm extends React.Component {
         "firm_adressergaenzung", "firm_postleitzahl", "firm_city",
         "firm_tel_int_vorwahl", "firm_vorwahl_tel", "firm_rufnummer_tel",
         "firm_e_mail", "firm_website"];
-      for (let i=0; i<eraseFirmAdress.length;i++){
+      for (let i = 0; i < eraseFirmAdress.length; i++) {
         this.eraseValue(eraseFirmAdress[i])
       };
     };
 
-    if(this.state.userInput["old_business"] === "yes"){
+    if (this.state.userInput["old_business"] === "yes") {
       this.showContainer("Previous Business-row-1");
       this.showContainer("Previous Business-row-2");
       this.eraseValue("old_business_no");
-      this.saveValue("old_business_yes","x");
+      this.saveValue("old_business_yes", "x");
     };
 
-    if(this.state.userInput["old_business"] === "no"){
+    if (this.state.userInput["old_business"] === "no") {
       this.hideContainer("Previous Business-row-1");
       this.hideContainer("Previous Business-row-2");
-      const erasePreviousBusiness = ["old_business_yes", "old_business_name","old_business_city",
-      "old_business_start_date","old_business_end_date","old_business_finanzamt","old_business_tax_id","old_business_ustid"];
-      for (let i=0; i<erasePreviousBusiness.length;i++){
+      const erasePreviousBusiness = ["old_business_yes", "old_business_name", "old_business_city",
+        "old_business_start_date", "old_business_end_date", "old_business_finanzamt", "old_business_tax_id", "old_business_ustid"];
+      for (let i = 0; i < erasePreviousBusiness.length; i++) {
         this.eraseValue(erasePreviousBusiness[i])
       };
-      this.saveValue("old_business_no","x");
+      this.saveValue("old_business_no", "x");
     };
 
-    if(this.state.userInput["handelsregister"] === "yes"){
+    if (this.state.userInput["handelsregister"] === "yes") {
       this.hideContainer("Handelsregister-row-3");
       this.hideContainer("Handelsregister-row-2");
       this.showContainer("Handelsregister-row-1");
@@ -234,32 +236,30 @@ export default class SteuerlicheErfassungForm extends React.Component {
       this.eraseValue("handelsregister_no");
     };
 
-    if(this.state.userInput["handelsregister"] === "no"){
+    if (this.state.userInput["handelsregister"] === "no") {
       this.hideContainer("Handelsregister-row-1");
       this.showContainer("Handelsregister-row-2");
       this.saveValue("handelsregister_no", "x");
-      const eraseHandelsregister = ["handelsregister_yes", "handelsregister_date","handelsregister_city","registry_number"]
-      for (let i=0; i<eraseHandelsregister.length;i++){
+      const eraseHandelsregister = ["handelsregister_yes", "handelsregister_date", "handelsregister_city", "registry_number"]
+      for (let i = 0; i < eraseHandelsregister.length; i++) {
         this.eraseValue(eraseHandelsregister[i])
       };
     };
 
-    if(this.state.userInput["handelsregister_application_done"] === "yes"){
+    if (this.state.userInput["handelsregister_application_done"] === "yes") {
       this.showContainer("Handelsregister-row-3");
       this.eraseValue("application_intended");
       this.saveValue("application_done", "x");
     };
 
-    if(this.state.userInput["handelsregister_application_done"] === "no"){
+    if (this.state.userInput["handelsregister_application_done"] === "no") {
       this.hideContainer("Handelsregister-row-3");
-      const eraseApplication = ["application_done", "registration_done_date","handelsregister_city","registry_number"]
-      for (let i=0; i<eraseApplication .length;i++){
-        this.eraseValue(eraseApplication [i])
+      const eraseApplication = ["application_done", "registration_done_date", "handelsregister_city", "registry_number"]
+      for (let i = 0; i < eraseApplication.length; i++) {
+        this.eraseValue(eraseApplication[i])
       };
       this.saveValue("application_intended", "x");
     };
-
-
 
     if (this.state.userInput["work_date"] !== undefined) {
       this.saveValue("neugründungsdate", this.state.userInput["work_date"])
@@ -294,12 +294,13 @@ export default class SteuerlicheErfassungForm extends React.Component {
     };
 
     return (
-      
-        <div className="form">
-          {formSections}
-          <div style={{textAlign:"center", padding:"2em"}}>{Button(this.sendAll,"Done")}</div>
+      <div className={styles.form}>
+        <div className={styles.innerForm}>
+        {formSections}
+        <div className={styles.printPdfButton}>{Button(this.sendAll, "Done")}</div>
+        <div className={styles.greyBottom}></div>
         </div>
-
+      </div>
     )
   };
 };

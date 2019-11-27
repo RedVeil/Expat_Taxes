@@ -1,5 +1,5 @@
 const x = ["test","bac"];
-const y = [{name:"bac", value:"123"}];
+const y = {name:"bac", value:"123"};
 
 let h = []
 
@@ -8,4 +8,6 @@ for(let i=0; i<y.length;i++){
     console.log("x")
 };
 
-console.log(h)
+
+const test = x.find(element => element === y.name)
+console.log(test)

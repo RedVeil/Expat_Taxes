@@ -1,5 +1,5 @@
 import React from "react";
-/*import "./Tooltip.css";*/
+import "./Tooltip.css";
 
 export default function Tooltips(inputTooltips){
   const tooltips = inputTooltips.map(function(tooltip){
