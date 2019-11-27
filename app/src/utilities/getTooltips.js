@@ -6,8 +6,10 @@ export default function getTooltips(inputFields) {
       i = 1
     };
     for (i; i < inputFields[row].length; i++) {
-      tooltips.push({ id: inputFields[row][i].name, text: inputFields[row][i].tooltip, top: inputFields[row][i].top })
+      tooltips.push({ id: `${inputFields[row][i].name}-tooltip`, text: inputFields[row][i].tooltip, top: inputFields[row][i].top })
     }
   }
+  console.log(tooltips)
+  return tooltips;
 };
 

@@ -1,4 +1,6 @@
 .arrow{
+    position: relative;
+    margin-top:-3em;
     display:inline-block;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);

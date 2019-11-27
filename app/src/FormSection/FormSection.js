@@ -7,8 +7,7 @@ import getTooltips from "../utilities/getTooltips";
 
 
 export default function FormSection(formSectionData, showTooltip, onChangeSave, handleRadioForms) {
-  const tooltips = getTooltips(formSectionData.inputFields)
-
+  const tooltips = getTooltips(formSectionData.inputFields);
   return (
     <div className={styles.formSection} id={`${formSectionData.title}-section`} style={{display:formSectionData.display}}>
         <h2>{formSectionData.title}</h2>

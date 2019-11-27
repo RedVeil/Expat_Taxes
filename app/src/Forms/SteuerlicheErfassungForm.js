@@ -23,14 +23,15 @@ export default class SteuerlicheErfassungForm extends React.Component {
   };
 
   showTooltip(event) {
-    if (this.state.currentTooltipId !== null) {
+    /*if (this.state.currentTooltipId !== null) {
       const previousTooltip = document.getElementById(this.state.currentTooltipId);
       previousTooltip.style.display = "none";
     };
     const newTooltipId = `${event.target.name}-tooltip`
     const newTooltip = document.getElementById(newTooltipId);
     newTooltip.style.display = "inline-block";
-    this.setState({ currentTooltipId: newTooltipId })
+    this.setState({ currentTooltipId: newTooltipId })*/
+    console.log(event)
   };
 
   onChangeSaveValue(event) {
@@ -259,8 +260,6 @@ export default class SteuerlicheErfassungForm extends React.Component {
       };
       this.saveValue("application_intended", "x");
     };
-
-
 
     if (this.state.userInput["work_date"] !== undefined) {
       this.saveValue("neugründungsdate", this.state.userInput["work_date"])

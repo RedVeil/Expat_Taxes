@@ -12,16 +12,19 @@ import "./App.css";
 
 export function App(){
   return(
-    <Router>
     <div className={styles.App}>
       <Nav/>
       <div style={{display:"inline-block"}}>
-        <Menu/>
-          <SteuerlicheErfassungForm/>
+      <Router>
+          <Menu/>
+          <Switch>
+            <Route path="/" exact component={LandingPage}/>
+            <Route path="/SteuerlicheErfassung" component={SteuerlicheErfassungForm}/>
+          </Switch>
+        </Router>
         </div>
       <Footer/>
     </div>
-    </Router>
   )
 };
 

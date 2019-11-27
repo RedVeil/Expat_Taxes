@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import styles from "./Menu.module.css";
 import "./Menu.css";
 
@@ -27,7 +29,9 @@ export default function Menu() {
             <div className={styles.menuText} onClick={collapsOrExpandMenu}>Menu</div>
           </div>
           <div id="tabs">
-            Tabs
+            <Link to="/SteuerlicheErfassung">
+              <div>Steuerliche Erfassung</div>
+            </Link>
           </div>
         </div>
     )
