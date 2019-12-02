@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
+
 import './InputField.css';
 
 export default function InputField(inputField, onFocusFunction, onChangeFunction, tooltip){
@@ -24,7 +26,9 @@ export default function InputField(inputField, onFocusFunction, onChangeFunction
   };
 
   return (
-    <div className="greyBackground" style={{width:widthStyle[inputField.size].background, margin:`0.5em ${marginStyle[inputField.margin]} 0.5em 0.5em`}}>
+    <div className="greyBackground"
+         style={{width:widthStyle[inputField.size].background, margin:`0.5em ${marginStyle[inputField.margin]} 0.5em 0.5em`}}
+          data-tip data-for={tooltip.id}>
       <input 
         id={inputField.name} 
         type={inputField.type="text"} 
@@ -35,7 +39,8 @@ export default function InputField(inputField, onFocusFunction, onChangeFunction
         required
         style={{width:widthStyle[inputField.size].inputField}}/>
       <label htmlFor={inputField.name} style={{width:widthStyle[inputField.size].inputField}}>{inputField.placeholder}</label>
-      {tooltip.text}
+      <ReactTooltip
+        className={"tooltip"} id={tooltip.id} effect={"solid"} place={"left"}>{tooltip.text}</ReactTooltip>
     </div>
   )
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import './RadioForm.css'
+import ReactTooltip from "react-tooltip";
 
 export default function RadioForm(radioForm, onFocusFunction,handleRadioForms,tooltip) {
   let newRadioForm = []
@@ -21,12 +22,14 @@ export default function RadioForm(radioForm, onFocusFunction,handleRadioForms,to
   };
 
   return (
-    <div className="radioForm" style={{marginRight:marginStyle[radioForm.margin]}}>
+    <div className="radioForm"
+         style={{marginRight:marginStyle[radioForm.margin]}}
+         data-tip data-for={tooltip.id}>
       <form >
         <h3 className="radioText">{radioForm.text}</h3>
         <div className="radioButtons">{newRadioForm}</div>
       </form>
-      {tooltip.text}
+      <ReactTooltip className="tooltip" id={tooltip.id} effect={"solid"}>{tooltip.text}</ReactTooltip>
     </div>
   )
   };
