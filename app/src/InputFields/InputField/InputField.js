@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 
-import './InputField.css';
+import styles from "./InputField.module.css";
 
 export default function InputField(inputField, onFocusFunction, onChangeFunction, tooltip){
   const widthStyle = {
@@ -26,9 +26,7 @@ export default function InputField(inputField, onFocusFunction, onChangeFunction
   };
 
   return (
-    <div className="greyBackground"
-         style={{width:widthStyle[inputField.size].background, margin:`0.5em ${marginStyle[inputField.margin]} 0.5em 0.5em`}}
-          data-tip data-for={tooltip.id}>
+    <div style={{display:"inline-block"}}>
       <input 
         id={inputField.name} 
         type={inputField.type="text"} 
@@ -37,8 +35,10 @@ export default function InputField(inputField, onFocusFunction, onChangeFunction
         onFocus={onFocusFunction} 
         onChange={onChangeFunction} 
         required
-        style={{width:widthStyle[inputField.size].inputField}}/>
-      <label htmlFor={inputField.name} style={{width:widthStyle[inputField.size].inputField}}>{inputField.placeholder}</label>
+        style={{width:widthStyle[inputField.size].inputField}}
+        className={styles.inputField}
+        data-tip data-for={tooltip.id}/>
+      <label htmlFor={inputField.name} style={{width:widthStyle[inputField.size].inputField}} className={styles.label}>{inputField.placeholder}</label>
       <ReactTooltip
         className={"tooltip"} id={tooltip.id} effect={"solid"} place={"left"}>{tooltip.text}</ReactTooltip>
     </div>

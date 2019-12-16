@@ -16,11 +16,14 @@ export function App(){
       <Nav/>
       <div style={{display:"inline-block"}}>
       <Router>
-          <Menu/>
+         
+          <div style={{display:"inline-block", float:"right"}}>
           <Switch>
             <Route path="/" exact component={LandingPage}/>
             <Route path="/SteuerlicheErfassung" component={SteuerlicheErfassungForm}/>
           </Switch>
+          </div>
+          <div style={{display:"inline-block", float:"right"}}><Menu/></div>
         </Router>
         </div>
       <Footer/>

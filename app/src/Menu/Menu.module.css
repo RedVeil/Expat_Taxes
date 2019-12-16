@@ -9,7 +9,6 @@
 .menu{
     position: sticky;
     top:0;
-    left: 42em;
     display: inline-block;
     z-index:0;
     background:#f8f8f8;
