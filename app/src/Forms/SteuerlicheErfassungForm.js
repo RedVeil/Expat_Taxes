@@ -294,12 +294,9 @@ export default class SteuerlicheErfassungForm extends React.Component {
     };
 
     return (
-      <div className={styles.form}>
-        <div className={styles.innerForm}>
+      <div>
         {formSections}
         <div className={styles.printPdfButton}>{Button(this.sendAll, "Done")}</div>
-        <div className={styles.greyBottom}></div>
-        </div>
       </div>
     )
   };

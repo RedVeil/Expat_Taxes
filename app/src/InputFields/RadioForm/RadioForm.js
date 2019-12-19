@@ -1,13 +1,24 @@
 import React from 'react';
-import './RadioForm.css'
-import ReactTooltip from "react-tooltip";
+import './RadioForm.css';
+import Tooltip from '@material-ui/core/Tooltip';
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-export default function RadioForm(radioForm, onFocusFunction,handleRadioForms,tooltip) {
+const theme = createMuiTheme({
+  overrides: {
+    MuiTooltip: {
+      tooltip: {
+        fontSize: "1em"
+      }
+    }
+  }
+});
+
+export default function RadioForm(radioForm, onFocusFunction, handleRadioForms, tooltip) {
   let newRadioForm = []
-  for (var i = 0; i < radioForm.placeholder.length; i++){
+  for (var i = 0; i < radioForm.placeholder.length; i++) {
     newRadioForm.push(
       <div className="radioButtonContainer">
-        <label className="buttonField" htmlFor={`${radioForm.name}-${i}`} style={{fontSize: "1.2em", display: "inline-block"}}>{radioForm.placeholder[i]}
+        <label className="buttonField" htmlFor={`${radioForm.name}-${i}`} style={{ fontSize: "1.2em", display: "inline-block" }}>{radioForm.placeholder[i]}
           <input type="radio" id={`${radioForm.name}-${i}`} name={radioForm.name} defaultValue={radioForm.defaultValue[i]} onFocus={onFocusFunction} onChange={handleRadioForms}></input>
           <span className="checkmark"></span>
         </label>
@@ -16,20 +27,22 @@ export default function RadioForm(radioForm, onFocusFunction,handleRadioForms,to
   }
 
   const marginStyle = {
-    small:"0.5em",
-    medium:"1em",
-    large:"1em",
+    small: "0.5em",
+    medium: "1em",
+    large: "1em",
   };
 
   return (
     <div className="radioForm"
-         style={{marginRight:marginStyle[radioForm.margin]}}
-         data-tip data-for={tooltip.id}>
-      <form >
-        <h3 className="radioText">{radioForm.text}</h3>
-        <div className="radioButtons">{newRadioForm}</div>
-      </form>
-      <ReactTooltip className="tooltip" id={tooltip.id} effect={"solid"}>{tooltip.text}</ReactTooltip>
+      style={{ marginRight: marginStyle[radioForm.margin] }}>
+      <MuiThemeProvider theme={theme}>
+        <Tooltip title={tooltip.text} placement="bottom" arrow={true}>
+          <form>
+            <h3 className="radioText">{radioForm.text}</h3>
+            <div className="radioButtons">{newRadioForm}</div>
+          </form>
+        </Tooltip>
+      </MuiThemeProvider>
     </div>
   )
-  };
+};

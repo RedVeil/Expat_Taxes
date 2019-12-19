@@ -6,7 +6,7 @@
   color: #707070;
   font-weight: bold;
   font-size: 1.3em;
-  /*transition: all 0.3s ease-out;*/
+  transition: all 0.3s ease-out;
   z-index: 1;
   cursor: pointer;
   overflow-wrap: break-word;
@@ -49,6 +49,15 @@
   padding:0.25em;
 }
 
+.container{
+  display: inline-block;
+  overflow: hidden;
+}
 
+.testLabel{
+  color:#707070
+}
 
-
+.testLabel:focus{
+  color:#707070
+}
