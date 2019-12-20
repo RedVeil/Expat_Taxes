@@ -1,0 +1,9 @@
+.container{
+  display: inline-block;
+  overflow: hidden;
+  margin: 0.75em 2em 0.75em 0em;
+}
+
+.questionMark{
+  cursor: pointer;
+}

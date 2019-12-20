@@ -1,25 +1,28 @@
 .arrow{
+    display: inline-block;
     position: relative;
     margin-top:-3em;
-    display:inline-block;
+    padding: 3px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
 .menu{
+    display: inline-block;
     position: sticky;
     top:0;
-    display: inline-block;
     z-index:0;
     background:#f8f8f8;
 }
 
 .menuCard{
+    display:inline-block;
     position: relative;
     margin-top:20em;
     left: -3em;
     border-radius: 5px 0 0 5px;
-    display:inline-block;
     background: #F8F8F8;
     padding: 3em 1em;
     z-index: 1;

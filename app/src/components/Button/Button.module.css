@@ -1,18 +1,18 @@
 .button{
   display:inline-block;
-  background: #EEEEEE;
+  background: #12A9DE;
   border:none;
   padding:0.9em 1.75em;
   border-radius: 5px;
   font-family: 'Roboto', sans-serif;
-  color: #707070;
+  color: #fff;
   font-size: 1em;
   font-weight: bold;
   transition: all 0.5s ease-out;
 }
 
 .button:hover{
-  background-color: #E2E2E2;
+  background-color: #2EC7FF;
   cursor: pointer;
 }
 

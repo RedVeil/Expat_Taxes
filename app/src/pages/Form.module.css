@@ -1,0 +1,15 @@
+.printPdfButton{
+    text-align:center;
+    padding:2em
+}
+
+.seperator{
+    margin: 2em 0;
+    border-top: 2px solid #F2F2F2;
+}
+
+.subTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.7em;
+}

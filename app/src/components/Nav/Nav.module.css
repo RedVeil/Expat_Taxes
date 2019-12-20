@@ -2,7 +2,8 @@
 
 .pageTitle{
   position: relative;
-  margin: 0 0 0 0em;
+  left: 1em;
+  color: #707070
 }
   
 .navigationContainer {
@@ -10,7 +11,7 @@
   background-color: #fff;
   width: 100%;
   height: 4em;
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
   
