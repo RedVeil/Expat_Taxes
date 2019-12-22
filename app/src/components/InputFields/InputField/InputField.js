@@ -40,7 +40,7 @@ const InputField = ({id, placeholder, tooltipText, onChangeFunction, size}) => {
               endAdornment: andornment,
               disableUnderline:true}}
             onChange={onChangeFunction}
-            style={{width:width[size]}}
+            style={{width:width[size], maxWidth:"100%"}}
           />
         </Tooltip> 
     </div>);

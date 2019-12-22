@@ -13,3 +13,28 @@
     font-weight: 400;
     font-size: 1.7em;
 }
+
+.gridContainer{
+    display:flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+}
+
+.textContainer{
+    display:flex;
+    justify-content:flex-start;
+}
+
+.subTextContainer{
+    display:flex;
+    justify-content:flex-start;
+    line-height: 170%;
+    color:#878787
+}
+
+.yearContainer{
+    display:flex;
+    justify-content:flex-start;
+    position: relative;
+    top:1em;
+}

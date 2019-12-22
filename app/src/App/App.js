@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
 
-import { specialExpensesGerman, specialExpensesEnglish } from "../databases/specialExpensesList";
+import { specialExpensesGerman, specialExpensesEnglish } from "../pages/ressources/specialExpensesList";
 import Nav from "../components/Nav/Nav";
 import Footer from "../components/Footer/Footer";
 import FormSteuerlicheErfassung from "../pages/FormSteuerlicheErfassung";
@@ -21,7 +21,7 @@ export function App() {
       <Grid container>
         <Grid item sm>
         </Grid>
-        <Grid item xs={12} sm={9} md={7}>
+        <Grid item xs={12} sm={12} md={12} lg={8} xl={7}>
           <div className={styles.main}>
             <div className={styles.testContainer}>
               <Router>
@@ -29,6 +29,7 @@ export function App() {
                   <Route path="/" exact component={LandingPage} />
                   <Route path="/FormSteuerlicheErfassung" component={FormSteuerlicheErfassung} />
                   <Route path="/InfoSteuerlicheErfassung" component={InfoSteuerlicheErfassung} />
+                  <Route path="/specialExpenses" component={specialExpensesEnglish} />
                 </Switch>
               </Router>
             </div>
