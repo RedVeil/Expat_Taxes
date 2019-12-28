@@ -1,7 +1,11 @@
 /****** Navigation Style *********/
 
 .pageTitle{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.7em;
   position: relative;
+  top:-0.2em;
   left: 1em;
   color: #707070
 }

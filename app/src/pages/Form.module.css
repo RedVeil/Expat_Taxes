@@ -9,7 +9,7 @@
 }
 
 .subTitle{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 1.7em;
 }
@@ -26,6 +26,8 @@
 }
 
 .subTextContainer{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
     display:flex;
     justify-content:flex-start;
     line-height: 170%;

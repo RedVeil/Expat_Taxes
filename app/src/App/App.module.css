@@ -1,6 +1,6 @@
 /****** General Styles *********/
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #707070;
   background: #fff;
   overflow-x: hidden;
@@ -21,4 +21,12 @@ body{
 
 .testContainer{
   margin: auto;
+}
+
+a{
+  color: #707070;
+}
+
+a:hover{
+  color:#12A9DE
 }

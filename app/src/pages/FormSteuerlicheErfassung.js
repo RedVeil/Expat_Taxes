@@ -43,6 +43,7 @@ const theme = createMuiTheme({
     MuiFormLabel: {
       root: {
         color: "#707070",
+        fontFamily: "'Roboto Mono', sans-serif",
         '&:hover': {
           color: "#333333",
         },
@@ -1121,9 +1122,10 @@ const FormSteuerlicheErfassung = () => {
           </Grid>
           <Grid item xs={12} className={styles.subTextContainer}>
             <p>Enter your expected income through various sources during the first two years of your business.
-              <br />There is no direct consquence if these numbers dont hold up to reality,
-              <br />your finanzamt will simply ask you to change or explain some of the amounts if they seem unreasonable. 
-              <br />As a rule of thumb keep it at the reasonable lower end.
+              <br/>All of these amounts shall include taxes. (If you dont use the "Small business rule")
+              <br/>There is no direct consquence if these numbers dont hold up to reality,
+              <br/>your finanzamt will simply ask you to change or explain some of the amounts if they seem unreasonable. 
+              <br/>As a rule of thumb keep it at the reasonable lower end.
             </p>
           </Grid>
           <Grid item xs={12} className={styles.yearContainer}>
@@ -1263,9 +1265,10 @@ const FormSteuerlicheErfassung = () => {
             </Grid>
             <Grid item xs={12} className={styles.subTextContainer}>
             <p>Enter the expected income of your partner during the first two years of your business.
-              <br />There is no direct consquence if these numbers dont hold up to reality,
-              <br />your finanzamt will simply ask you to change or explain some of the amounts if they seem unreasonable. 
-              <br />As a rule of thumb keep it at the reasonable lower end.
+              <br/>All of these amounts shall include taxes. (If you dont use the "Small business rule")
+              <br/>There is no direct consquence if these numbers dont hold up to reality,
+              <br/>your finanzamt will simply ask you to change or explain some of the amounts if they seem unreasonable. 
+              <br/>As a rule of thumb keep it at the reasonable lower end.
             </p>
           </Grid>
             <Grid item xs={12} className={styles.yearContainer}>
@@ -1538,9 +1541,9 @@ const FormSteuerlicheErfassung = () => {
           <Grid item xs={12} className={styles.subTextContainer}>
             <p>If your total revenue (Umsatz) is lower than 19.000€ you may decide to use the Kleinunternehmer-Regel
             (Small Business Rule).
-            <br />This means you dont have to pay any sales tax (Umsatzsteuer).
-            <br /><b>In this case you cannot add sales tax to your receivables.</b>
-            <br />If you click 'No' you simply pay sales tax and add it to your receivables.</p>
+            <br />This means you dont have to pay any VAT (Umsatzsteuer).
+            <br /><b>In this case you cannot add VAT to your receivables.</b>
+            <br />If you click 'No' you simply pay VAT and add it to your receivables.</p>
           </Grid>
           <Grid item xs={12} className={styles.textContainer}>
             <RadioField

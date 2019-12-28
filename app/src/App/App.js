@@ -8,8 +8,10 @@ import Footer from "../components/Footer/Footer";
 import FormSteuerlicheErfassung from "../pages/FormSteuerlicheErfassung";
 import InfoSteuerlicheErfassung from "../pages/InfoSteuerlicheErfassung";
 import LandingPage from "../pages/LandingPage";
-
-
+import umsatzsteuerExplanation from "../pages/ressources/umsatzsteuerExplanation";
+import bruttoNettoExplanation from "../pages/ressources/bruttoNettoExplanation";
+import differentGermanTaxes from "../pages/ressources/differentGermanTaxes";
+import freiberuflerVsGewerbe from "../pages/ressources/freiberuflerVsGewerbe";
 
 import styles from "./App.module.css";
 
@@ -30,6 +32,10 @@ export function App() {
                   <Route path="/FormSteuerlicheErfassung" component={FormSteuerlicheErfassung} />
                   <Route path="/InfoSteuerlicheErfassung" component={InfoSteuerlicheErfassung} />
                   <Route path="/specialExpenses" component={specialExpensesEnglish} />
+                  <Route path="/umsatzsteuerExplanation" component={umsatzsteuerExplanation} />
+                  <Route path="/bruttoNettoExplanation" component={bruttoNettoExplanation} />
+                  <Route path="/differentGermanTaxes" component={differentGermanTaxes} />
+                  <Route path="/freiberuflerVsGewerbe" component={freiberuflerVsGewerbe} />
                 </Switch>
               </Router>
             </div>
