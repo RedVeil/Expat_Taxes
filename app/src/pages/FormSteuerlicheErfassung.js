@@ -389,7 +389,7 @@ const FormSteuerlicheErfassung = () => {
             <InputField
               id="vorwahl_tel"
               tooltipText="The second part of your phone number: +49 [176] 752428790"
-              placeholder="Prefix"
+              placeholder="Area- Code"
               onChangeFunction={onChangeSaveValue}
               size="small"
             />
@@ -642,7 +642,7 @@ const FormSteuerlicheErfassung = () => {
             <InputField
               id="work_date"
               tooltipText="You can backdate this by up to 3 months to include preparation costs"
-              placeholder="Start of Occupation"
+              placeholder="Occupation Date"
               onChangeFunction={onChangeSaveValue}
               size="medium"
             />
@@ -799,7 +799,7 @@ const FormSteuerlicheErfassung = () => {
             <InputField
               id="b_vorwahl_tel"
               tooltipText=""
-              placeholder="Prefix"
+              placeholder="Area- Code"
               onChangeFunction={onChangeSaveValue}
               size="small"
             />
@@ -905,7 +905,7 @@ const FormSteuerlicheErfassung = () => {
             <InputField
               id="doc_vorwahl_tel"
               tooltipText=""
-              placeholder="Prefix"
+              placeholder="Area- Code"
               onChangeFunction={onChangeSaveValue}
               size="small"
             />
@@ -1085,7 +1085,7 @@ const FormSteuerlicheErfassung = () => {
             <InputField
               id="firm_vorwahl_tel"
               tooltipText=""
-              placeholder="Prefix"
+              placeholder="Area- Code"
               onChangeFunction={onChangeSaveValue}
               size="small"
             />
@@ -1135,7 +1135,7 @@ const FormSteuerlicheErfassung = () => {
             <InputField
               id="u_betrag1"
               tooltipText='You can enter your self-employment income here only if your job counts as "Freiberufliche Tätigkeit", otherwise you enter it in "Business Revenue"'
-              placeholder="Selfemployment Income"
+              placeholder="Freelance Income"
               onChangeFunction={onChangeSaveValue}
               size="medium"
             />
@@ -1155,7 +1155,7 @@ const FormSteuerlicheErfassung = () => {
             />
             <InputField
               id="u_betrag9"
-              tooltipText='If your job counts as "Freiberufliche Tätigkeit" enter it at "Selfemployment Income"'
+              tooltipText='If your job counts as "Freiberufliche Tätigkeit" enter it at "Freelance Income"'
               placeholder="Business Revenue"
               onChangeFunction={onChangeSaveValue}
               size="medium"
@@ -1186,7 +1186,7 @@ const FormSteuerlicheErfassung = () => {
             />
             <InputField
               id="sum1"
-              tooltipText="Add your Business Revenue to your Selfemployment Income"
+              tooltipText="Add your Business Revenue to your Freelance Income"
               placeholder="Total Revenue"
               onChangeFunction={onChangeSaveValue}
               size="medium"
@@ -1199,7 +1199,7 @@ const FormSteuerlicheErfassung = () => {
             <InputField
               id="u_betrag5"
               tooltipText='You can enter your self-employment income here only if your job counts as "Freiberufliche Tätigkeit", otherwise you enter it in "Business Revenue"'
-              placeholder="Selfemployment Income"
+              placeholder="Freelance Income"
               onChangeFunction={onChangeSaveValue}
               size="medium"
             />
@@ -1220,7 +1220,7 @@ const FormSteuerlicheErfassung = () => {
             />
             <InputField
               id="u_betrag10"
-              tooltipText='If your job counts as "Freiberufliche Tätigkeit" enter it at "Selfemployment Income"'
+              tooltipText='If your job counts as "Freiberufliche Tätigkeit" enter it at "Freelance Income"'
               placeholder="Business Revenue"
               onChangeFunction={onChangeSaveValue}
               size="medium"
@@ -1250,7 +1250,7 @@ const FormSteuerlicheErfassung = () => {
             />
             <InputField
               id="sum2"
-              tooltipText="Add your Business Revenue to your Selfemployment Income"
+              tooltipText="Add your Business Revenue to your Freelance Income"
               placeholder="Total Revenue"
               onChangeFunction={onChangeSaveValue}
               size="medium"
@@ -1278,7 +1278,7 @@ const FormSteuerlicheErfassung = () => {
               <InputField
                 id="p_betrag1"
                 tooltipText='You can enter their self-employment income here only if your job counts as "Freiberufliche Tätigkeit", otherwise you enter it in "Business Revenue"'
-                placeholder="Selfemployment Income"
+                placeholder="Freelance Income"
                 onChangeFunction={onChangeSaveValue}
                 size="medium"
               />
@@ -1298,7 +1298,7 @@ const FormSteuerlicheErfassung = () => {
               />
               <InputField
                 id="p_betrag9"
-                tooltipText='If their job counts as "Freiberufliche Tätigkeit" enter it at "Selfemployment Income"'
+                tooltipText='If their job counts as "Freiberufliche Tätigkeit" enter it at "Freelance Income"'
                 placeholder="Business Revenue"
                 onChangeFunction={onChangeSaveValue}
                 size="medium"
@@ -1336,7 +1336,7 @@ const FormSteuerlicheErfassung = () => {
               <InputField
                 id="p_betrag5"
                 tooltipText='You can enter their self-employment income here only if your job counts as "Freiberufliche Tätigkeit", otherwise you enter it in "Business Revenue"'
-                placeholder="Selfemployment Income"
+                placeholder="Freelance Income"
 
                 onChangeFunction={onChangeSaveValue}
                 size="medium"
@@ -1359,7 +1359,7 @@ const FormSteuerlicheErfassung = () => {
               />
               <InputField
                 id="p_betrag10"
-                tooltipText='If their job counts as "Freiberufliche Tätigkeit" enter it at "Selfemployment Income"'
+                tooltipText='If their job counts as "Freiberufliche Tätigkeit" enter it at "Freelance Income"'
                 placeholder="Business Revenue"
                 onChangeFunction={onChangeSaveValue}
                 size="medium"

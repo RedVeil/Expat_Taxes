@@ -26,7 +26,7 @@ const InfoSteuerlicheErfassung = () => {
         </p>
         <p>
           In Germany, there is a legal difference between being a freelancer (Freiberufler) and being a tradesman (Gewerbetreibende).
-          If you are registering a trade (Gewerbe), you must get a trade licence (Gewerbeschein) aswell. <a href="localhost:3000/freiberuflerVsGewerbe" target="_blank" rel="noopener noreferrer">More info...</a>
+          If you are registering a trade (Gewerbe), you must get a trade licence (Gewerbeschein) aswell. <a href="http://counsiliery.de/freiberuflerVsGewerbe" target="_blank" rel="noopener noreferrer">More info...</a>
         </p>
         <p>German dates are written in the DD/MM/YYYY format.</p>
         <p><b>This form must be filled in <a target="_blank" rel="noopener noreferrer" href="https://www.deepl.com/translator">german</a>.
@@ -40,13 +40,13 @@ const InfoSteuerlicheErfassung = () => {
       <div>
         <p>More Information:</p>
         <li>
-          <a href="localhost:3000/specialExpenses" target="_blank" rel="noopener noreferrer">List of special expenses</a>
+          <a href="http://counsiliery.de/specialExpenses" target="_blank" rel="noopener noreferrer">List of special expenses</a>
         </li>
         <li>
-          <a href="localhost:3000/differentGermanTaxes" target="_blank" rel="noopener noreferrer">What are the different taxes?</a>
+          <a href="http://counsiliery.de/differentGermanTaxes" target="_blank" rel="noopener noreferrer">What are the different taxes?</a>
         </li>
         <li>
-          <a href="localhost:3000/umsatzsteuerExplanation" target="_blank" rel="noopener noreferrer">Value added tax (Umsatzsteuer)</a>
+          <a href="http://counsiliery.de/umsatzsteuerExplanation" target="_blank" rel="noopener noreferrer">Value added tax (Umsatzsteuer)</a>
         </li>
        
       </div>

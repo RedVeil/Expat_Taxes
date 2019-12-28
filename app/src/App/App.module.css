@@ -1,6 +1,8 @@
 /****** General Styles *********/
 body{
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family:'Roboto Mono', sans-serif;
+  line-height: 170%;
   color: #707070;
   background: #fff;
   overflow-x: hidden;
