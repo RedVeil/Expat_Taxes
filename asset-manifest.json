@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "counsiliery.de/static/css/main.717c95f5.chunk.css",
-    "main.js": "counsiliery.de/static/js/main.2cd0107c.chunk.js",
-    "main.js.map": "counsiliery.de/static/js/main.2cd0107c.chunk.js.map",
-    "runtime-main.js": "counsiliery.de/static/js/runtime-main.2245a507.js",
-    "runtime-main.js.map": "counsiliery.de/static/js/runtime-main.2245a507.js.map",
-    "static/js/2.82f7a983.chunk.js": "counsiliery.de/static/js/2.82f7a983.chunk.js",
-    "static/js/2.82f7a983.chunk.js.map": "counsiliery.de/static/js/2.82f7a983.chunk.js.map",
-    "index.html": "counsiliery.de/index.html",
-    "precache-manifest.6e6e5cc8845631fa549faef6b077573b.js": "counsiliery.de/precache-manifest.6e6e5cc8845631fa549faef6b077573b.js",
-    "service-worker.js": "counsiliery.de/service-worker.js",
-    "static/css/main.717c95f5.chunk.css.map": "counsiliery.de/static/css/main.717c95f5.chunk.css.map",
-    "static/js/2.82f7a983.chunk.js.LICENSE": "counsiliery.de/static/js/2.82f7a983.chunk.js.LICENSE"
+    "main.css": "redveil.github.io/Expat_Taxes/static/css/main.717c95f5.chunk.css",
+    "main.js": "redveil.github.io/Expat_Taxes/static/js/main.c2f7550b.chunk.js",
+    "main.js.map": "redveil.github.io/Expat_Taxes/static/js/main.c2f7550b.chunk.js.map",
+    "runtime-main.js": "redveil.github.io/Expat_Taxes/static/js/runtime-main.967db0dd.js",
+    "runtime-main.js.map": "redveil.github.io/Expat_Taxes/static/js/runtime-main.967db0dd.js.map",
+    "static/js/2.82f7a983.chunk.js": "redveil.github.io/Expat_Taxes/static/js/2.82f7a983.chunk.js",
+    "static/js/2.82f7a983.chunk.js.map": "redveil.github.io/Expat_Taxes/static/js/2.82f7a983.chunk.js.map",
+    "index.html": "redveil.github.io/Expat_Taxes/index.html",
+    "precache-manifest.9b48a98700e043471670d4ba202537dd.js": "redveil.github.io/Expat_Taxes/precache-manifest.9b48a98700e043471670d4ba202537dd.js",
+    "service-worker.js": "redveil.github.io/Expat_Taxes/service-worker.js",
+    "static/css/main.717c95f5.chunk.css.map": "redveil.github.io/Expat_Taxes/static/css/main.717c95f5.chunk.css.map",
+    "static/js/2.82f7a983.chunk.js.LICENSE": "redveil.github.io/Expat_Taxes/static/js/2.82f7a983.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.2245a507.js",
+    "static/js/runtime-main.967db0dd.js",
     "static/js/2.82f7a983.chunk.js",
     "static/css/main.717c95f5.chunk.css",
-    "static/js/main.2cd0107c.chunk.js"
+    "static/js/main.c2f7550b.chunk.js"
   ]
 }
