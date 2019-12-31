@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "redveil.github.io/Expat_Taxes/static/css/main.717c95f5.chunk.css",
-    "main.js": "redveil.github.io/Expat_Taxes/static/js/main.c2f7550b.chunk.js",
-    "main.js.map": "redveil.github.io/Expat_Taxes/static/js/main.c2f7550b.chunk.js.map",
-    "runtime-main.js": "redveil.github.io/Expat_Taxes/static/js/runtime-main.967db0dd.js",
-    "runtime-main.js.map": "redveil.github.io/Expat_Taxes/static/js/runtime-main.967db0dd.js.map",
-    "static/js/2.82f7a983.chunk.js": "redveil.github.io/Expat_Taxes/static/js/2.82f7a983.chunk.js",
-    "static/js/2.82f7a983.chunk.js.map": "redveil.github.io/Expat_Taxes/static/js/2.82f7a983.chunk.js.map",
-    "index.html": "redveil.github.io/Expat_Taxes/index.html",
-    "precache-manifest.9b48a98700e043471670d4ba202537dd.js": "redveil.github.io/Expat_Taxes/precache-manifest.9b48a98700e043471670d4ba202537dd.js",
-    "service-worker.js": "redveil.github.io/Expat_Taxes/service-worker.js",
-    "static/css/main.717c95f5.chunk.css.map": "redveil.github.io/Expat_Taxes/static/css/main.717c95f5.chunk.css.map",
-    "static/js/2.82f7a983.chunk.js.LICENSE": "redveil.github.io/Expat_Taxes/static/js/2.82f7a983.chunk.js.LICENSE"
+    "main.css": "/Expat_Taxes/static/css/main.717c95f5.chunk.css",
+    "main.js": "/Expat_Taxes/static/js/main.010c8a31.chunk.js",
+    "main.js.map": "/Expat_Taxes/static/js/main.010c8a31.chunk.js.map",
+    "runtime-main.js": "/Expat_Taxes/static/js/runtime-main.3a9e2005.js",
+    "runtime-main.js.map": "/Expat_Taxes/static/js/runtime-main.3a9e2005.js.map",
+    "static/js/2.82f7a983.chunk.js": "/Expat_Taxes/static/js/2.82f7a983.chunk.js",
+    "static/js/2.82f7a983.chunk.js.map": "/Expat_Taxes/static/js/2.82f7a983.chunk.js.map",
+    "index.html": "/Expat_Taxes/index.html",
+    "precache-manifest.be8314687ccc5063bc17c8f0a6bbe2c9.js": "/Expat_Taxes/precache-manifest.be8314687ccc5063bc17c8f0a6bbe2c9.js",
+    "service-worker.js": "/Expat_Taxes/service-worker.js",
+    "static/css/main.717c95f5.chunk.css.map": "/Expat_Taxes/static/css/main.717c95f5.chunk.css.map",
+    "static/js/2.82f7a983.chunk.js.LICENSE": "/Expat_Taxes/static/js/2.82f7a983.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.967db0dd.js",
+    "static/js/runtime-main.3a9e2005.js",
     "static/js/2.82f7a983.chunk.js",
     "static/css/main.717c95f5.chunk.css",
-    "static/js/main.c2f7550b.chunk.js"
+    "static/js/main.010c8a31.chunk.js"
   ]
 }
