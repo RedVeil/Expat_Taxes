@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-pdf": "^4.1.0",
